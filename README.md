@@ -65,10 +65,3 @@ Palette: clarity teal `#0e9aa5` (deep `#0a626b`) with warm amber `#f5a623` accen
 Mark: concentric "clarity lens" rings with an amber sparkle (`public/assets/img/sc-mark-*.png`).
 Type: Satoshi (display) + Manrope (body), loaded at runtime from Fontshare/Google Fonts.
 
-## Credits
-
-* [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) (BSD-3-Clause) by Xintao Wang et al.,
-  run here through the ncnn build. ncnn model files bundled from the open-source
-  `realesrgan-ncnn-vulkan` distribution via npm-packaged copies.
-* Site structure originally derived from the WhiteBlue marketing-site template (Angular 19),
-  fully rebranded and rewritten for SupplierClarity AI.
