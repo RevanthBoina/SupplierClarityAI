@@ -1,0 +1,84 @@
+<section class="pitch" aria-labelledby="pitch-title">
+  <div class="pitch__layout wb-container">
+    <div class="pitch__copy">
+      <wb-pill-label wbReveal icon="how-we-work" class="pitch__eyebrow">How it works</wb-pill-label>
+      <h2 wbReveal class="wb-h2" id="pitch-title"><span class="wb-accent">Every catalog</span><br />starts differently</h2>
+      <p wbReveal [wbRevealDelay]="120" class="wb-lead pitch__lead">
+        Blurry uploads, low DPI, wrong backgrounds, missing angles, bloated files. Every supplier ships a different mix, so the pipeline studies each image before it enhances it.
+      </p>
+      <wb-button wbReveal [wbRevealDelay]="240" class="pitch__cta" href="/enhance">See it in action</wb-button>
+    </div>
+
+    <div
+      wbReveal="fade"
+      class="pitch__media"
+      role="img"
+      aria-label="A workspace scattered with supplier product photos, marked with the challenges every catalog faces: blurry uploads, low DPI, wrong background, missing angles and file bloat">
+      <div class="pitch__frame" #frame>
+        <img class="pitch__base" src="assets/illustrations/pitch-base.webp" width="1440" height="1120" alt="" />
+
+        <!-- Field markings. Coordinates are image pixels; the SVG box is 1.8× the picture so lines can
+             run past its edges towards the copy. The ground-plane transform maps a circle onto the
+             same perspective as the pitch (axes measured from the stumps and creases). -->
+        <svg class="pitch__field" viewBox="-576 -448 2592 2016" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <filter id="pitch-field-feather" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="34" />
+            </filter>
+            <!-- Keeps the markings off the pitch strip and its labels -->
+            <mask id="pitch-field-mask" maskUnits="userSpaceOnUse" x="-576" y="-448" width="2592" height="2016">
+              <rect x="-576" y="-448" width="2592" height="2016" fill="#fff" />
+              <polygon points="427.9,215.4 1072.5,1106.5 1376.2,886.7 731.6,-4.3" fill="#000" filter="url(#pitch-field-feather)" />
+            </mask>
+          </defs>
+
+          <g mask="url(#pitch-field-mask)">
+            <!-- Ground plane: the pitch runs along the x axis (stumps at x = ±386), creases along y -->
+            <g transform="matrix(0.586 0.810 0.939 -0.343 869 612)">
+              <defs>
+                <clipPath id="pitch-ground-clip"><circle cx="0" cy="0" [attr.r]="boundary" /></clipPath>
+                <radialGradient id="pitch-ground-glow" cx="0" cy="0" [attr.r]="boundary" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#0e9aa5" stop-opacity="0.09" />
+                  <stop offset="0.7" stop-color="#0e9aa5" stop-opacity="0.04" />
+                  <stop offset="1" stop-color="#0e9aa5" stop-opacity="0.02" />
+                </radialGradient>
+              </defs>
+
+              <!-- Outfield: soft turf tone, mowing stripes parallel to the pitch and a faint grid -->
+              <g class="pitch__ground" clip-path="url(#pitch-ground-clip)">
+                <circle cx="0" cy="0" [attr.r]="boundary" fill="url(#pitch-ground-glow)" />
+                @for (y of stripes; track y) {
+                  <rect class="pitch__stripe" [attr.x]="-boundary" [attr.y]="y" [attr.width]="boundary * 2" [attr.height]="stripeWidth" />
+                }
+                @for (g of grid; track g) {
+                  <line class="pitch__grid" [attr.x1]="g" [attr.y1]="-boundary" [attr.x2]="g" [attr.y2]="boundary" vector-effect="non-scaling-stroke" />
+                  <line class="pitch__grid" [attr.x1]="-boundary" [attr.y1]="g" [attr.x2]="boundary" [attr.y2]="g" vector-effect="non-scaling-stroke" />
+                }
+              </g>
+
+              <!-- 30-yard fielding circle (dashed) and the boundary rope -->
+              <circle class="pitch__mark pitch__mark--dashed" cx="0" cy="0" [attr.r]="innerCircle"
+                      pathLength="1" vector-effect="non-scaling-stroke" />
+              <circle class="pitch__mark pitch__mark--boundary" cx="0" cy="0" [attr.r]="boundary"
+                      pathLength="1" vector-effect="non-scaling-stroke" />
+            </g>
+          </g>
+        </svg>
+
+        <!-- Pain points: a marker on the pitch with a stem rising to its label (image-pixel coordinates) -->
+        <svg class="pitch__markers" viewBox="0 0 1440 1120" aria-hidden="true">
+          @for (p of painPoints; track p.label; let i = $index) {
+            <line class="pitch__stem" [attr.x1]="p.x" [attr.y1]="p.y" [attr.x2]="p.x" [attr.y2]="p.y - stemHeight"
+                  pathLength="1" [style.transition-delay.ms]="200 + i * 180" />
+            <ellipse class="pitch__spot" [attr.cx]="p.x" [attr.cy]="p.y" rx="15" ry="7.5" [style.transition-delay.ms]="100 + i * 180" />
+          }
+        </svg>
+        @for (p of painPoints; track p.label; let i = $index) {
+          <span class="pitch__label" aria-hidden="true"
+                [style.left.%]="p.x / 14.4" [style.top.%]="(p.y - stemHeight) / 11.2"
+                [style.transition-delay.ms]="450 + i * 180">{{ p.label }}</span>
+        }
+      </div>
+    </div>
+  </div>
+</section>

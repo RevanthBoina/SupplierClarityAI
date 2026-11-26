@@ -1,0 +1,154 @@
+:host { display: block; }
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 32px 0 clamp(40px, 2.6vw, 50px);
+  /* SupplierClarity: white at the bottom, through 40% deep-sea teal, up to clarity teal at the top */
+  /* Bottom is transparent so the scroll-driven page colour shows through */
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 24%, rgba(8, 84, 92, 0.4) 44%, var(--wb-blue) 74%);
+}
+
+/* 100px grid of hairlines, white at 20%, fading out towards the logos */
+.hero__grid {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 834px;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 100px 100px;
+  background-position: calc(50% - 900px) 0, 0 0;
+  mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 92%);
+}
+
+/* Space for the fixed site navigation (see shared/site-header.component) */
+.hero__nav-space { height: 74px; }
+
+/* ---------- Hero statement ---------- */
+.hero__content {
+  position: relative;
+  z-index: 1;
+  width: min(1440px, 100% - 2 * var(--wb-gutter)); /* wide enough for each headline line on one row */
+  margin: var(--wb-space-lg) auto 0;
+  /* Fill the rest of the first screen (below the nav), so the client logos start below the fold */
+  min-height: calc(100svh - 32px - 74px - var(--wb-space-lg));
+  padding-bottom: var(--wb-space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 18px;
+  border: 1px solid var(--wb-glass-border);
+  border-radius: 70px;
+  background: var(--wb-glass-fill);
+  font-family: var(--wb-font-display);
+  font-weight: 500;
+  font-size: clamp(0.9375rem, 0.94vw, 1.125rem);
+  color: var(--wb-white);
+}
+
+.hero__title {
+  margin-top: var(--wb-space-sm);
+  /* As in the hero reference: Manrope, first line white, second line dark, normal word spacing */
+  font-family: var(--wb-font-body);
+  font-weight: 700;
+  font-size: var(--wb-fs-hero);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--wb-ink);
+}
+.hero__white { color: var(--wb-white); }
+/* Each headline line is its own block, so the two lines always stack (no <br> needed) */
+.hero__line { display: block; }
+/* Subhead: second line always starts at "WhiteBlue" on wider screens; phones wrap naturally */
+@media (min-width: 721px) {
+  .hero__lead { max-width: none; }
+  .hero__lead-line { display: block; }
+}
+.hero__lead { margin-inline: auto; }
+
+.hero__lead {
+  margin-top: var(--wb-space-sm);
+  max-width: 880px;
+  font-family: var(--wb-font-body);
+  font-weight: 500;
+  font-size: clamp(1.0625rem, 1.6vw, 1.75rem); /* 28px max */
+  line-height: 1.32;
+  color: var(--wb-ink-800);
+}
+
+.hero__actions {
+  margin-top: clamp(40px, 3.3vw, 64px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--wb-space-sm);
+}
+
+/* ---------- Client logos ---------- */
+.clients {
+  position: relative;
+  z-index: 1;
+  width: min(966px, 100% - 2 * var(--wb-gutter));
+  margin: var(--wb-space-lg) auto 0;
+  text-align: center;
+}
+.clients__title {
+  font-family: var(--wb-font-body);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 1.98vw, 2.375rem);
+  color: var(--wb-ink);
+}
+.clients__logos {
+  margin-top: var(--wb-space-sm);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 84px;
+}
+.clients__logo {
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+}
+.clients__logo img { width: 100%; height: 100%; object-fit: contain; filter: grayscale(1); }
+.clients__placeholder {
+  font-family: var(--wb-font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  color: #8a8a8a;
+}
+
+@media (max-width: 720px) {
+  .hero__actions { gap: var(--wb-space-xs); }
+  .clients__logos { justify-content: center; gap: 20px 36px; }
+}
+
+/* ---------- Motion: one orchestrated load sequence ---------- */
+.hero__grid { animation: wb-grid-drift 24s linear infinite; }
+.hero__badge { animation: wb-rise 0.8s var(--wb-ease-out) 0.15s both; }
+.hero__title { animation: wb-rise 1s var(--wb-ease-out) 0.3s both; }
+.hero__lead { animation: wb-rise 1s var(--wb-ease-out) 0.5s both; }
+.hero__actions { animation: wb-rise 1s var(--wb-ease-out) 0.65s both; }
+.clients { animation: wb-rise 1s var(--wb-ease-out) 0.85s both; }
+
+
+.clients__logo { transition: transform 0.3s var(--wb-ease-out), opacity 0.3s ease; opacity: 0.85; }
+.clients__logo:hover { transform: translateY(-3px); opacity: 1; }
+.clients__logo img { transition: filter 0.3s ease; }
+.clients__logo:hover img { filter: none; }
+
+
+@media (max-width: 1100px) {
+  .clients__logos { justify-content: center; gap: 20px 56px; }
+}

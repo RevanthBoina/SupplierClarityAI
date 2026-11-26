@@ -1,0 +1,248 @@
+:host { display: block; position: relative; z-index: 100; }
+
+/* ---------- Nav ---------- */
+.nav-wrap {
+  position: relative;
+  z-index: 100;
+  height: 0; /* the nav is fixed; each page's hero leaves 74px of space for it */
+}
+
+/* While scrolling: a full-width fade behind the nav, solid at the top of the window and
+   transparent just below the nav, so content scrolling up disappears under it.
+   Uses the current page colour (white for most sections) so it blends in. */
+.nav-wrap::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 110px;
+  /* Always white (Melwin): never picks up a section's colour such as yellow */
+  background: linear-gradient(to bottom, #fff 0%, #fff 55%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.nav-wrap--scrolled::before { opacity: 1; }
+
+/* Sticky: the nav stays pinned 32px from the top of the window while scrolling */
+.nav {
+  position: fixed;
+  top: 32px;
+  left: 50%;
+  translate: -50% 0; /* separate from transform, which the entrance animation uses */
+  width: min(var(--wb-container), 100% - 2 * var(--wb-gutter));
+  transition: background 0.3s ease, box-shadow 0.3s ease, top 0.35s ease, width 0.35s ease,
+    min-height 0.35s ease, padding 0.35s ease;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-height: 74px;
+  padding: 11px 22px;
+  border: 1px solid var(--wb-glass-border);
+  border-radius: 70px;
+  background: var(--wb-glass-fill);
+  backdrop-filter: blur(10px);
+}
+
+/* Pages without the blue home hero use a solid bar from the start */
+.nav--solid {
+  border-color: transparent;
+  background: var(--wb-blue);
+  box-shadow: 0 10px 30px rgba(14, 154, 165, 0.25);
+}
+
+/* Once the page scrolls off the blue hero, the white links need a solid blue backing */
+.nav--scrolled {
+  background: rgba(14, 154, 165, 0.92);
+  box-shadow: 0 10px 30px rgba(11, 21, 51, 0.18);
+}
+
+/* Condensed while scrolling: closer to the top, shorter, narrower, smaller contents */
+.nav--scrolled {
+  top: 12px;
+  width: min(1040px, 100% - 2 * var(--wb-gutter));
+  min-height: 56px;
+  padding: 6px 8px 6px 20px;
+}
+.nav__logo img { transition: width 0.35s ease; }
+.nav--scrolled .nav__logo img { width: 40px; }
+.nav__wordmark { transition: font-size 0.35s ease; }
+.nav__links { transition: font-size 0.35s ease; }
+.nav--scrolled .nav__links { font-size: clamp(0.9375rem, 0.95vw, 1.0625rem); }
+.nav--scrolled .nav__cta { --wb-fs-button: clamp(0.9375rem, 0.9vw, 1.0625rem); --wb-btn-pad: 8px 20px; }
+.nav--scrolled .nav__toggle { width: 42px; height: 42px; }
+
+.nav__logo { flex: none; margin-right: auto; display: inline-flex; align-items: center; gap: 12px; }
+.nav__logo img { width: clamp(40px, 3vw, 47px); height: auto; transition: width 0.35s ease; }
+.nav--scrolled .nav__logo img { width: 40px; }
+.nav__wordmark {
+  font-family: var(--wb-font-display);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1.5vw, 1.6rem);
+  letter-spacing: -0.01em;
+  color: var(--wb-white);
+  white-space: nowrap;
+}
+.nav__wordmark em { font-style: normal; color: var(--wb-yellow); }
+.nav--scrolled .nav__wordmark { font-size: clamp(1.1rem, 1.2vw, 1.3rem); }
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-family: var(--wb-font-display);
+  font-weight: 500;
+  font-size: var(--wb-fs-nav);
+  color: var(--wb-white);
+  white-space: nowrap;
+
+  a {
+    position: relative;
+    padding-block: 4px;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 2px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease;
+    }
+    &:hover::after, &:focus-visible::after { transform: scaleX(1); }
+  }
+}
+
+/* ---------- Drop-down menus (desktop: hover or keyboard focus) ---------- */
+.nav__item--parent { position: relative; }
+.nav__item--parent > a { display: inline-flex; align-items: center; gap: 4px; }
+.nav__caret { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.25s ease; }
+.nav__sub {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  min-width: 220px;
+  margin: 0;
+  /* Top padding bridges the gap to the bar so the menu stays open while the pointer moves down */
+  padding: 22px 0 0;
+  translate: -50% 6px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, translate 0.25s var(--wb-ease-out), visibility 0s linear 0.2s;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 22px 0 0;
+    z-index: -1;
+    border: 1px solid #e3e9f8;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 18px 40px rgba(11, 21, 51, 0.16);
+  }
+  li { padding: 0 8px; }
+  li:first-child { padding-top: 8px; }
+  li:last-child { padding-bottom: 8px; }
+  a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-family: var(--wb-font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1e1e1e;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    &::after { display: none; }
+    &:hover, &:focus-visible { background: var(--wb-blue-tint); color: var(--wb-blue); }
+    &.is-current { color: var(--wb-blue); }
+  }
+}
+@media (min-width: 1281px) {
+  .nav__item--parent:hover .nav__sub,
+  .nav__item--parent:focus-within .nav__sub { opacity: 1; visibility: visible; pointer-events: auto; translate: -50% 0; transition-delay: 0s; }
+  .nav__item--parent:hover .nav__caret,
+  .nav__item--parent:focus-within .nav__caret { transform: rotate(180deg); }
+}
+
+.nav__menu-cta { display: none; }
+.nav__cta { flex: none; --wb-fs-button: clamp(1rem, 1.04vw, 1.25rem); }
+
+/* Desktop: links centered in the bar, logo left, CTA right */
+@media (min-width: 1281px) {
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+  }
+  .nav__logo { margin-right: 0; justify-self: start; }
+  .nav__cta { justify-self: end; }
+}
+
+.nav__toggle {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.nav__toggle-bar {
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--wb-white);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav__toggle[aria-expanded='true'] .nav__toggle-bar:nth-child(2) { transform: translateY(7px) rotate(45deg); }
+.nav__toggle[aria-expanded='true'] .nav__toggle-bar:nth-child(3) { opacity: 0; }
+.nav__toggle[aria-expanded='true'] .nav__toggle-bar:nth-child(4) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 1280px) {
+  .nav__toggle { display: inline-flex; }
+  .nav__cta { display: none; }
+  .nav__links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 16px;
+    border-radius: 24px;
+    background: var(--wb-blue-deep);
+    box-shadow: 0 20px 40px rgba(11, 21, 51, 0.25);
+
+    a { display: block; padding: 12px 14px; border-radius: 12px; }
+    a:hover { background: rgba(255, 255, 255, 0.1); }
+    a::after { display: none; }
+  }
+  /* Mobile menu: sub-pages listed, indented, under their parent */
+  .nav__caret { display: none; }
+  .nav__sub {
+    position: static;
+    min-width: 0;
+    padding: 0 0 4px 14px;
+    translate: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    &::before { display: none; }
+    li, li:first-child, li:last-child { padding: 0; }
+    a { padding: 8px 14px; font-weight: 500; font-size: 0.9375rem; color: rgba(255, 255, 255, 0.82); border-left: 1px solid rgba(255, 255, 255, 0.2); border-radius: 0 10px 10px 0; }
+    a:hover, a:focus-visible { background: rgba(255, 255, 255, 0.1); color: #fff; }
+    a.is-current { color: #fff; }
+  }
+  .nav__links--open { display: flex; }
+  .nav__menu-cta { display: block; padding: 8px 6px 4px; }
+}
+
+
+/* ---------- Motion ---------- */
+.nav { animation: wb-drop 0.8s var(--wb-ease-out) both; }
+.nav__links--open { animation: wb-drop 0.35s var(--wb-ease-out) both; }
