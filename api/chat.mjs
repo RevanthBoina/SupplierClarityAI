@@ -6,8 +6,8 @@
  *   GROQ_API_KEY     (https://console.groq.com)
  *   GEMINI_API_KEY   (https://aistudio.google.com/app/apikey)
  * Optional:
- *   GROQ_MODEL       default "llama-3.3-70b-versatile"
- *   GEMINI_MODEL     default "gemini-2.0-flash"
+ *   GROQ_MODEL       default "openai/gpt-oss-120b"
+ *   GEMINI_MODEL     default "gemini-2.5-flash"
  *   CHAT_PROVIDER    "groq" | "gemini" | "auto" (default "auto": Groq first)
  *
  * GET /api/chat returns the public provider status (no key material).

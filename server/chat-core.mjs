@@ -1,15 +1,15 @@
 /**
  * Shared chat brain for the Clarity Assistant.
  * Used by both the Express server (server/index.mjs) and the Vercel
- * serverless function (api/chat.js), so local and production behave alike.
+ * serverless function (api/chat.mjs), so local and production behave alike.
  *
  * Environment variables (set in Vercel: Project Settings > Environment
  * Variables, or in a local .env file for the Express server):
  *   GROQ_API_KEY        Groq API key (https://console.groq.com)
  *   GEMINI_API_KEY      Google Gemini API key (https://aistudio.google.com/app/apikey)
  *                       Aliases also accepted: GOOGLE_API_KEY, GOOGLE_GENERATIVE_AI_API_KEY
- *   GROQ_MODEL          Optional, default "llama-3.3-70b-versatile"
- *   GEMINI_MODEL        Optional, default "gemini-2.0-flash"
+ *   GROQ_MODEL          Optional, default "openai/gpt-oss-120b"
+ *   GEMINI_MODEL        Optional, default "gemini-2.5-flash"
  *   CHAT_PROVIDER       Optional: "groq" | "gemini" | "auto" (default "auto")
  *
  * Keys are read only on the server and never sent to the browser.
@@ -147,14 +147,14 @@ async function fetchWithTimeout(url, options, ms = 25000) {
 async function callGroq(history) {
   const key = groqKey();
   if (!key) throw new Error('Groq key not configured');
-  const model = env('GROQ_MODEL') || 'llama-3.3-70b-versatile';
+  const model = env('GROQ_MODEL') || 'openai/gpt-oss-120b';
   const res = await fetchWithTimeout('https://api.groq.com/openai/v1/chat/completions', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` },
     body: JSON.stringify({
       model,
       temperature: 0.4,
-      max_tokens: 600,
+      max_tokens: 1024,
       messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...history],
     }),
   });
@@ -168,7 +168,7 @@ async function callGroq(history) {
 async function callGemini(history) {
   const key = geminiKey();
   if (!key) throw new Error('Gemini key not configured');
-  const model = env('GEMINI_MODEL') || 'gemini-2.0-flash';
+  const model = env('GEMINI_MODEL') || 'gemini-2.5-flash';
   const contents = history.map(m => ({
     role: m.role === 'assistant' ? 'model' : 'user',
     parts: [{ text: m.text }],
@@ -181,7 +181,7 @@ async function callGemini(history) {
       body: JSON.stringify({
         systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
         contents,
-        generationConfig: { temperature: 0.4, maxOutputTokens: 600 },
+        generationConfig: { temperature: 0.4, maxOutputTokens: 1024 },
       }),
     },
   );

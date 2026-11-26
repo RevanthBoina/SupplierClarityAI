@@ -88,8 +88,8 @@ conversation is never reset — it persists across scroll hide/show, route chang
 1. Vercel dashboard → your project → **Settings → Environment Variables**
 2. Add `GROQ_API_KEY` (from https://console.groq.com) and/or `GEMINI_API_KEY`
    (from https://aistudio.google.com/app/apikey)
-3. Optionally set `GROQ_MODEL` (default `llama-3.3-70b-versatile`),
-   `GEMINI_MODEL` (default `gemini-2.0-flash`) or `CHAT_PROVIDER` (`groq` | `gemini` | `auto`, default `auto`)
+3. Optionally set `GROQ_MODEL` (default `openai/gpt-oss-120b`),
+   `GEMINI_MODEL` (default `gemini-2.5-flash`) or `CHAT_PROVIDER` (`groq` | `gemini` | `auto`, default `auto`)
 4. Redeploy. `GET /api/chat` returns the public provider status (never the keys).
 
 `vercel.json` excludes `/api/*` from the SPA rewrite so the function works; everything else still
