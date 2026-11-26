@@ -65,3 +65,42 @@ Palette: clarity teal `#0e9aa5` (deep `#0a626b`) with warm amber `#f5a623` accen
 Mark: concentric "clarity lens" rings with an amber sparkle (`public/assets/img/sc-mark-*.png`).
 Type: Satoshi (display) + Manrope (body), loaded at runtime from Fontshare/Google Fonts.
 
+
+## Clarity Assistant (bottom-right chatbot)
+
+A floating assistant sits in the bottom-right corner on every page. It appears when the visitor
+scrolls up (and stays visible at the top of the page), slides away when they scroll down, and the
+conversation is never reset — it persists across scroll hide/show, route changes and reloads
+(localStorage), and remains interactive while open.
+
+**How it works**
+
+* Frontend: `src/app/shared/ai-chatbot.component.*` (+ `ai-chatbot.service.ts`) mounted once in the app
+  shell. Answers are typed out progressively; responses render as safe markdown-lite (bold, lists,
+  links to site pages).
+* Backend: `POST /api/chat` — one implementation shared by the Express server (`server/index.mjs`) and
+  the Vercel serverless function (`api/chat.mjs`). **Keys are read server-side only and never reach the browser.**
+* Providers: Groq is tried first, then Google Gemini, then a built-in knowledge base — so the chat
+  always answers, even with no key configured (useful for local dev and demos).
+
+**Set the API keys (Vercel)**
+
+1. Vercel dashboard → your project → **Settings → Environment Variables**
+2. Add `GROQ_API_KEY` (from https://console.groq.com) and/or `GEMINI_API_KEY`
+   (from https://aistudio.google.com/app/apikey)
+3. Optionally set `GROQ_MODEL` (default `openai/gpt-oss-120b`),
+   `GEMINI_MODEL` (default `gemini-2.5-flash`) or `CHAT_PROVIDER` (`groq` | `gemini` | `auto`, default `auto`)
+4. Redeploy. `GET /api/chat` returns the public provider status (never the keys).
+
+`vercel.json` excludes `/api/*` from the SPA rewrite so the function works; everything else still
+serves `index.html`.
+
+**Local development**
+
+```bash
+cp .env.example .env   # fill in keys — never commit .env (already git-ignored)
+node --env-file=.env server/index.mjs
+```
+
+Or without keys: `npm start` (ng serve proxies `/api` to `localhost:8787`) and the built-in
+knowledge base answers.

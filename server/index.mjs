@@ -17,6 +17,7 @@ import fs from "node:fs/promises";
 import fsSync from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { handleChat, getChatConfig } from "./chat-core.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -224,7 +225,22 @@ const app = express();
 app.use(express.json({ limit: "1mb" }));
 
 app.get("/api/health", (_req, res) => {
-  res.json({ ok: true, engine: "Real-ESRGAN (ncnn, CPU)", queue: queue.length, active });
+  res.json({ ok: true, engine: "Real-ESRGAN (ncnn, CPU)", queue: queue.length, active, chat: getChatConfig() });
+});
+
+/* Clarity Assistant: Groq/Gemini when keys are set, knowledge base otherwise.
+   Keys come from the environment (see .env.example) and never reach the browser. */
+app.get("/api/chat", (_req, res) => {
+  res.json({ ok: true, chat: getChatConfig() });
+});
+
+app.post("/api/chat", async (req, res) => {
+  try {
+    res.json(await handleChat(req.body || {}));
+  } catch (e) {
+    console.error("[chat] error:", e.message);
+    res.status(500).json({ error: "Chat request failed" });
+  }
 });
 
 app.get("/api/models", (_req, res) => {
