@@ -1,0 +1,113 @@
+<footer class="footer">
+  <div class="footer__grid-lines" aria-hidden="true"></div>
+  <img class="footer__ball-mark" src="assets/illustrations/ball-watermark.svg" width="144" height="172" alt="" />
+
+  <div class="wb-container footer__inner">
+    <!-- Newsletter -->
+    <section class="newsletter" aria-labelledby="newsletter-title" wbReveal>
+      <span class="newsletter__icon" aria-hidden="true"><img src="assets/illustrations/ball.svg" width="32" height="32" alt="" /></span>
+      <div class="newsletter__copy">
+        <h2 class="newsletter__title" id="newsletter-title">Join our AI Innovation Feed</h2>
+        <p class="newsletter__text">Weekly insights on AI, data and automation. Unsubscribe at any time.</p>
+      </div>
+
+      @if (state() === 'done') {
+        <p class="newsletter__done" role="status">Thanks, you’re subscribed. Look out for the next issue.</p>
+      } @else {
+        <form class="newsletter__form" (ngSubmit)="subscribe()" novalidate>
+          <label class="newsletter__field" [class.newsletter__field--error]="state() === 'invalid'">
+            <span class="wb-visually-hidden">Email address</span>
+            <svg width="18" height="13" viewBox="0 0 18 13" fill="none" aria-hidden="true">
+              <rect x="0.75" y="0.75" width="16.5" height="11.5" rx="2" stroke="#6B7290" stroke-width="1.5" />
+              <path d="M1 1.5L9 7L17 1.5" stroke="#6B7290" stroke-width="1.5" stroke-linejoin="round" />
+            </svg>
+            <input
+              type="email"
+              name="email"
+              autocomplete="email"
+              placeholder="Enter your email"
+              [(ngModel)]="email"
+              (input)="state.set('idle')"
+              [attr.aria-invalid]="state() === 'invalid'"
+              aria-describedby="newsletter-error" />
+          </label>
+          <button type="submit" class="newsletter__submit wb-beam">
+            Subscribe
+            <svg width="19" height="13" viewBox="0 0 19 13" fill="none" aria-hidden="true">
+              <path d="M1 6.5H17.5M17.5 6.5L12 1M17.5 6.5L12 12" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <p class="newsletter__error" id="newsletter-error" role="alert">
+            @if (state() === 'invalid') { Please enter a valid email address. }
+          </p>
+        </form>
+      }
+    </section>
+
+    <!-- Offices + sitemap -->
+    <div class="footer__main">
+      <section class="offices" aria-labelledby="offices-title" wbReveal="left">
+        <h2 class="footer__heading" id="offices-title">Where we work</h2>
+        <p class="offices__text">Teams across 3 countries and 6 cities</p>
+
+        <div class="globe" role="img" aria-label="Globe with offices in the USA, the UAE and India">
+          <div class="globe__float">
+            <img class="globe__img" src="assets/img/globe.png" width="350" height="366" alt="" />
+            <span class="globe__sheen" aria-hidden="true"></span>
+            @for (pin of pins; track pin.country; let i = $index) {
+              <span class="globe__ping" [style.left.%]="pin.x" [style.top.%]="pin.y" [attr.title]="pin.country + ': ' + pin.cities">
+                <span class="wb-visually-hidden">{{ pin.country }}: {{ pin.cities }}</span>
+              </span>
+              <!-- Country call-outs pop in one after another, left to right -->
+              <span class="globe__callout" [class]="'globe__callout globe__callout--' + pin.country.toLowerCase()"
+                    [style.left.%]="pin.x" [style.top.%]="pin.y" [style.--i]="i" aria-hidden="true">{{ pin.country }}</span>
+            }
+          </div>
+        </div>
+      </section>
+
+      <div class="sitemap">
+        <nav class="sitemap__columns" aria-label="Footer">
+          @for (column of columns; track column.heading; let i = $index) {
+            <div class="sitemap__col" wbReveal [wbRevealDelay]="i * 110">
+              <h2 class="footer__heading">{{ column.heading }}</h2>
+              <ul>
+                @for (link of column.links; track link.label) {
+                  <li><a [href]="link.href">{{ link.label }}</a></li>
+                }
+              </ul>
+            </div>
+          }
+        </nav>
+
+      </div>
+
+      <section class="social" aria-labelledby="social-title" wbReveal="right" [wbRevealDelay]="330">
+          <h2 class="wb-visually-hidden" id="social-title">Social media</h2>
+          <ul class="social__list">
+            @for (social of socials; track social.label) {
+              <li>
+                <a class="social__link" [href]="social.href" [attr.aria-label]="social.label" target="_blank" rel="noopener">
+                  <img [src]="social.icon" width="44" height="44" alt="" />
+                </a>
+              </li>
+            }
+          </ul>
+      </section>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="legal" wbReveal="fade">
+      <p>© {{ year }} WhiteBlue - All rights reserved</p>
+      <ul class="legal__links">
+        @for (link of legal; track link.label; let last = $last) {
+          <li><a [href]="link.href">{{ link.label }}</a>@if (!last) { <span class="legal__sep" aria-hidden="true">|</span> }</li>
+        }
+      </ul>
+      <p>ISO 27001 certified</p>
+    </div>
+  </div>
+
+
+  <p class="footer__wordmark" aria-hidden="true">WhiteBlue</p>
+</footer>

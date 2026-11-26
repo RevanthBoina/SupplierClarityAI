@@ -1,0 +1,219 @@
+:host { display: block; }
+
+.products {
+  position: relative;
+  z-index: 1; /* above the services field that spills into this section */
+  padding: var(--wb-section-y) 0;
+  background: transparent;
+}
+
+.products__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px 64px;
+}
+.products__heading { display: flex; flex-direction: column; align-items: flex-start; gap: var(--wb-space-xs); max-width: 780px; }
+@media (min-width: 1200px) { .products__heading .wb-h2 { white-space: nowrap; } }
+.products__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--wb-space-md);
+  max-width: 660px;
+  padding-top: calc(36px + var(--wb-space-xs)); /* lines up with the heading, below the pill */
+}
+
+/* ---------- Product deck ---------- */
+/* Overlapping deck (Figma): expanded card 886 wide, collapsed cards 314 wide. Each collapsed card
+   slides 32% under the card to its right; the open card tucks 18px under its neighbours.
+   The content of a covered card is centred in the part that stays visible (see --covered). */
+.deck {
+  --tab-w: clamp(200px, 16.4vw, 314px);
+  --tab-overlap: calc(var(--tab-w) * 0.322);
+  margin-top: var(--wb-space-lg);
+  display: flex;
+  align-items: stretch;
+  height: clamp(380px, 26.5vw, 508px);
+}
+
+.deck__card {
+  position: relative;
+  flex: 0 0 var(--tab-w);
+  margin-left: calc(-1 * var(--tab-overlap));
+  border-radius: 12px;
+  transition: flex-basis 0.6s cubic-bezier(0.22, 1, 0.36, 1), margin 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.deck__card:first-child { margin-left: 0; }
+.deck__card--active { flex-basis: clamp(420px, 46.15vw, 886px); }
+.deck__card--active:not(:first-child),
+.deck__card--after-active { margin-left: -18px; }
+/* A collapsed card whose right part is hidden under the next collapsed card */
+.deck__card--covered .tab { padding-right: calc(var(--tab-overlap) + 12px); }
+
+/* ---------- Expanded panel ---------- */
+.panel {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.07);
+}
+.panel__photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* The name, summary and CTA are always shown on the open card; hovering only zooms the photo. */
+.panel__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 32px;
+  padding: 0 44px 54px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 18.4%, #000 100%);
+}
+.panel__overlay--solid { background: none; justify-content: center; }
+
+.panel__wordmark { width: 217px; height: auto; filter: brightness(0) invert(1); }
+.panel__name {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--wb-font-display);
+  font-weight: 700;
+  font-size: var(--wb-fs-h3);
+  color: #fff;
+}
+.panel__logo { width: 56px; height: 56px; border-radius: 50%; background: #fff; flex: none; }
+.panel__row { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.panel__summary {
+  max-width: 420px;
+  font-family: var(--wb-font-body);
+  font-weight: 600;
+  font-size: clamp(1.0625rem, 1.25vw, 1.5rem);
+  line-height: 1.33;
+  color: #d9d9d9;
+}
+.panel__overlay--solid .panel__summary { color: rgba(255, 255, 255, 0.92); }
+.panel__cta {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 242px;
+  height: 54px;
+  padding: 10px 24px;
+  border: 1px solid rgba(244, 249, 255, 0.95);
+  border-radius: 40px;
+  font-family: var(--wb-font-display);
+  font-weight: 700;
+  font-size: var(--wb-fs-button);
+  color: #fff;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.panel__cta:hover { background: #fff; color: var(--wb-blue); }
+.panel__cta { --wb-beam-border: 1px; --wb-beam-tail: rgba(244, 249, 255, 0.95); --wb-beam-core: #fff; }
+
+/* ---------- Collapsed tab ---------- */
+.tab {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(32px, 2.9vw, 56px) 12px clamp(28px, 2.5vw, 44px);
+  border-radius: 12px;
+  background: var(--card-bg);
+  /* Soft shadow cast to the left onto the card underneath, for a layered look */
+  box-shadow: -12px 0 24px rgba(20, 24, 60, 0.22);
+  text-align: center;
+}
+.tab:hover { filter: brightness(1.06); }
+.tab__logo {
+  width: clamp(80px, 5.86vw, 112px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #fff;
+}
+.tab__logo img { width: 100%; height: 100%; object-fit: contain; }
+.tab__initials { font-family: var(--wb-font-display); font-weight: 900; font-size: 1.75rem; color: var(--wb-blue-deep); }
+.tab__name {
+  margin-top: 18px;
+  font-family: var(--wb-font-display);
+  font-weight: 500;
+  font-size: clamp(1.375rem, 1.46vw, 1.75rem);
+  color: #fff;
+}
+.tab__tagline {
+  margin-top: 4px;
+  max-width: 204px;
+  text-wrap: balance;
+  font-family: var(--wb-font-body);
+  font-size: clamp(0.9375rem, 0.94vw, 1.125rem);
+  line-height: 1.4;
+  color: #000;
+}
+.tab__expand {
+  margin-top: auto;
+  font-family: var(--wb-font-display);
+  font-weight: 700;
+  font-size: clamp(0.9375rem, 0.94vw, 1.125rem); /* fits the card; wraps rather than clipping */
+  line-height: 1.3;
+  color: var(--wb-yellow);
+}
+
+/* Mid-size screens: the open card is narrower, so stack its summary above the CTA */
+@media (max-width: 1280px) {
+  .panel__overlay { padding: 0 28px 32px; gap: 20px; }
+  .panel__row { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .panel__cta { min-width: 0; height: 48px; }
+}
+
+/* ---------- Narrow screens: vertical accordion ---------- */
+@media (max-width: 900px) {
+  .deck { flex-direction: column; height: auto; gap: 12px; }
+  .deck__card,
+  .deck__card--active,
+  .deck__card--active:not(:first-child),
+  .deck__card--after-active { flex: none; margin-left: 0; }
+  .deck__card--covered .tab { padding-right: 20px; }
+  .deck__card--active { height: clamp(360px, 70vw, 480px); }
+  .tab { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 6px 16px; padding: 16px 20px; text-align: left; box-shadow: none; }
+  .tab__logo { width: 56px; }
+  .tab__initials { font-size: 1.1rem; }
+  .tab__name { margin-top: 0; }
+  .tab__tagline { flex-basis: 100%; max-width: none; color: rgba(0, 0, 0, 0.8); }
+  .tab__expand { margin-top: 0; font-size: 1rem; }
+  .panel { border-radius: 12px; }
+  .panel__overlay { padding: 0 24px 28px; gap: 20px; }
+  .panel__row { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .panel__cta { min-width: 0; }
+}
+
+/* ---------- Motion ---------- */
+/* Newly expanded content fades up once the card has opened */
+.panel { animation: panel-in 0.7s var(--wb-ease-out) both; }
+@keyframes panel-in { from { opacity: 0.4; } to { opacity: 1; } }
+.panel__overlay--solid > * { animation: wb-rise 0.7s var(--wb-ease-out) 0.25s both; }
+.panel__overlay--solid > * + * { animation-delay: 0.38s; }
+.panel__photo { transition: transform 1.2s var(--wb-ease-out); }
+.panel:hover .panel__photo { transform: scale(1.05); }
+.panel__overlay:not(.panel__overlay--solid) > * { animation: wb-rise 0.7s var(--wb-ease-out) 0.25s both; }
+.panel__overlay:not(.panel__overlay--solid) > * + * { animation-delay: 0.38s; }
+
+.tab { transition: filter 0.2s ease, transform 0.45s var(--wb-ease-out), padding 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+.tab:hover { transform: translateY(-10px); }
+.tab__logo { transition: transform 0.6s var(--wb-ease-spring); }
+.tab:hover .tab__logo { transform: scale(1.08) rotate(-6deg); }
+.tab__expand-end { white-space: nowrap; } /* the arrow never wraps onto a line by itself */
+.tab__expand span[aria-hidden] { display: inline-block; transition: transform 0.3s var(--wb-ease-out); }
+.tab:hover .tab__expand span[aria-hidden] { transform: translateX(6px); }
+
+@media (max-width: 900px) {
+  .tab:hover { transform: none; }
+}

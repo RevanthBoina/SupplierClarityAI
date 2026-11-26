@@ -1,0 +1,44 @@
+<div class="nav-wrap" [class.nav-wrap--scrolled]="scrolled()">
+  <nav class="nav" [class.nav--scrolled]="scrolled()" [class.nav--solid]="solid()" aria-label="Primary">
+    <a class="nav__logo" href="/" aria-label="WhiteBlue home">
+      <img src="assets/img/whiteblue-logo.png" width="213" height="47" alt="WhiteBlue" />
+    </a>
+
+    <ul class="nav__links" [class.nav__links--open]="menuOpen()" id="primary-menu">
+      @for (link of navLinks; track link.label) {
+        @if (link.children?.length) {
+          <li class="nav__item nav__item--parent">
+            <a [href]="link.href" (click)="closeMenu()" aria-haspopup="true">
+              {{ link.label }}
+              <svg class="nav__caret" viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" /></svg>
+            </a>
+            <ul class="nav__sub" [attr.aria-label]="link.label">
+              @for (child of link.children; track child.href) {
+                <li><a [href]="child.href" [class.is-current]="child.href === path()" (click)="closeMenu()">{{ child.label }}</a></li>
+              }
+            </ul>
+          </li>
+        } @else {
+          <li class="nav__item"><a [href]="link.href" (click)="closeMenu()">{{ link.label }}</a></li>
+        }
+      }
+      <li class="nav__menu-cta">
+        <wb-button [href]="consultationHref">Book a consultation</wb-button>
+      </li>
+    </ul>
+
+    <wb-button class="nav__cta" [href]="consultationHref">Book a consultation</wb-button>
+
+    <button
+      type="button"
+      class="nav__toggle"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="primary-menu"
+      (click)="toggleMenu()">
+      <span class="wb-visually-hidden">{{ menuOpen() ? 'Close menu' : 'Open menu' }}</span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+    </button>
+  </nav>
+</div>

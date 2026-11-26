@@ -1,0 +1,63 @@
+<section class="products" id="products" aria-labelledby="products-title">
+  <div class="wb-container">
+    <div class="products__head">
+      <div class="products__heading" wbReveal>
+        <wb-pill-label icon="products">Products</wb-pill-label>
+        <h2 class="wb-h2" id="products-title"><span class="wb-accent">Products built from</span><br />real delivery work.</h2>
+      </div>
+      <div class="products__intro" wbReveal [wbRevealDelay]="150">
+        <p class="wb-lead">Proven in live enterprise deployments, and built to adapt to your systems, data and rules. You start ahead, not from scratch.</p>
+        <wb-button [href]="consultationHref">Book a consultation</wb-button>
+      </div>
+    </div>
+
+    <ul class="deck" role="list" wbReveal="right" [wbRevealDelay]="200">
+      @for (product of products; track product.name; let i = $index) {
+        @let isActive = i === activeIndex();
+        <li
+          class="deck__card"
+          [class.deck__card--active]="isActive"
+          [class.deck__card--after-active]="i === activeIndex() + 1"
+          [class.deck__card--covered]="!isActive && i < products.length - 1 && i + 1 !== activeIndex()"
+          [style.z-index]="isActive ? 1 : i + 1"
+          [style.--card-bg]="product.gradient">
+
+          @if (isActive) {
+            <article class="panel" [attr.aria-label]="product.name">
+              @if (product.image) {
+                <img class="panel__photo" [src]="product.image" width="886" height="508" [alt]="product.name + ' in use'" />
+              }
+              <div class="panel__overlay" [class.panel__overlay--solid]="!product.image">
+                @if (product.wordmark) {
+                  <img class="panel__wordmark" [src]="product.wordmark" width="217" height="50" [alt]="product.name" />
+                } @else {
+                  <h3 class="panel__name">
+                    @if (product.logo) { <img class="panel__logo" [src]="product.logo" width="56" height="56" alt="" /> }
+                    {{ product.name }}
+                  </h3>
+                }
+                <div class="panel__row">
+                  <p class="panel__summary">{{ product.summary }}</p>
+                  <a class="panel__cta wb-beam" [href]="product.href" [attr.target]="product.href.startsWith('http') ? '_blank' : null" rel="noopener">{{ product.ctaLabel }}</a>
+                </div>
+              </div>
+            </article>
+          } @else {
+            <button type="button" class="tab" (click)="select(i)" [attr.aria-label]="'Expand ' + product.name">
+              <span class="tab__logo">
+                @if (product.logo) {
+                  <img [src]="product.logo" width="113" height="113" alt="" />
+                } @else {
+                  <span class="tab__initials">{{ initials(product) }}</span>
+                }
+              </span>
+              <span class="tab__name">{{ product.name }}</span>
+              <span class="tab__tagline">{{ product.tagline }}</span>
+              <span class="tab__expand">Click to <span class="tab__expand-end">expand <span aria-hidden="true">→</span></span></span>
+            </button>
+          }
+        </li>
+      }
+    </ul>
+  </div>
+</section>

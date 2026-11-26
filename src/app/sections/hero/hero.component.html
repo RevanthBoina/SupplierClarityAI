@@ -1,0 +1,40 @@
+<header class="hero" id="top">
+  <div class="hero__grid" aria-hidden="true"></div>
+
+  <div class="hero__nav-space" aria-hidden="true"></div>
+
+  <div class="hero__content">
+    <p class="hero__badge">Solving challenges through deep tech</p>
+
+    <h1 class="hero__title">
+      <span class="hero__line hero__white">Smarter ops, faster growth,</span>
+      <span class="hero__line">powered by the right tech.</span>
+    </h1>
+
+    <p class="hero__lead">
+      <span class="hero__lead-line">From cloud and data modernization to API services and agentic AI,</span>
+      <span class="hero__lead-line">WhiteBlue solves the right challenges for your business growth.</span>
+    </p>
+
+    <div class="hero__actions">
+      <wb-button [href]="consultationHref">Book a consultation</wb-button>
+      <wb-button href="#services" variant="light">See what we build</wb-button>
+    </div>
+  </div>
+
+  <section class="clients" aria-labelledby="clients-title">
+    <h2 class="clients__title" id="clients-title">Trusted by industry leaders</h2>
+    <ul class="clients__logos">
+      @for (logo of clientLogos; track logo.name) {
+        <li class="clients__logo" [style.width.px]="logo.width" [style.height.px]="logo.height">
+          @if (logo.src) {
+            <img [src]="logo.src" [width]="logo.width" [height]="logo.height" [alt]="logo.name" />
+          } @else {
+            <!-- Placeholder until the client logo files are supplied -->
+            <span class="clients__placeholder">{{ logo.name }}</span>
+          }
+        </li>
+      }
+    </ul>
+  </section>
+</header>
