@@ -1,6 +1,6 @@
-# WhiteBlue website: global rules
+# SupplierClarity website: global rules
 
-Every page follows these rules. When Melwin gives an instruction that could apply site-wide, confirm once
+Every page follows these rules. When the team gives an instruction that could apply site-wide, confirm once
 whether it is global; if yes, apply it to every existing page, add it here, and follow it on all new pages.
 
 _Last updated: 2026-11-26_
@@ -8,7 +8,7 @@ _Last updated: 2026-11-26_
 ## Header and footer (global, shared on every page)
 - One header (`shared/site-header`) and one footer (`sections/footer`), rendered by the app shell
   (`app.component.ts`). Pages never include their own.
-- Home page: see-through glass bar over the blue hero. Every other page: solid blue bar from the top.
+- Home page: see-through glass bar over the teal hero. Every other page: solid teal bar from the top.
 - On all pages the bar is pinned 32px from the top and condenses (shorter, narrower, 12px from the top)
   once the page scrolls, with a fade strip behind it. The fade strip is always white.
 - A coloured block at the end of a page (e.g. a yellow band before the footer) keeps `wbSectionTheme="#ffffff"`
