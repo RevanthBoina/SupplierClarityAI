@@ -21,7 +21,7 @@ import { DATA_CTA, DATA_HELP, DATA_HERO, DATA_IMPACT, DATA_LAYERS } from '../../
   template: `
     <wb-agentic-hero wbSectionTheme="#ffffff" [content]="hero" />
     <main>
-      <wb-agentic-help wbSectionTheme="#f4f7ff" [content]="help" layout="centered" />
+      <wb-agentic-help wbSectionTheme="#f0f9fa" [content]="help" layout="centered" />
       <wb-agentic-delivery wbSectionTheme="#ffffff" [content]="layers" />
       <wb-impact-rows wbSectionTheme="#f7f8ff" [content]="impact" />
       <wb-cta-panel wbSectionTheme="#ffffff" [title]="cta.titleLead" [accent]="cta.titleAccent" [lead]="cta.lead"

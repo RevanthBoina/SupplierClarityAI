@@ -26,7 +26,7 @@ import { API_CTA, API_HERO, API_IMPACT, API_INDUSTRIES, API_SERVICES_RING } from
   template: `
     <wb-agentic-hero wbSectionTheme="#ffffff" [content]="hero" />
     <main>
-      <wb-agentic-help wbSectionTheme="#f4f7ff" [content]="industries" layout="centered" />
+      <wb-agentic-help wbSectionTheme="#f0f9fa" [content]="industries" layout="centered" />
       <wb-agentic-delivery wbSectionTheme="#ffffff" [content]="services" />
       <wb-api-cloud wbSectionTheme="#2f5bf0" />
       <wb-api-why wbSectionTheme="#ffffff" />

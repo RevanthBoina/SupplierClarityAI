@@ -109,7 +109,7 @@ import { Leader, PURPOSE } from '../../content/about-content';
       </section>
 
       <!-- Advisory board: domain / regional tabs -->
-      <wb-advisory-board wbSectionTheme="#f4f7ff" />
+      <wb-advisory-board wbSectionTheme="#f0f9fa" />
 
       <!-- Join our team -->
       <section class="join" wbSectionTheme="#ffffff" aria-labelledby="join-title">
@@ -168,10 +168,10 @@ import { Leader, PURPOSE } from '../../content/about-content';
       min-height: clamp(150px, 22svh, 220px);
       padding: clamp(20px, 2vw, 32px);
       border-radius: 24px;
-      background: #f4f7ff;
+      background: #f0f9fa;
       transition: transform 0.4s var(--wb-ease-out), box-shadow 0.4s var(--wb-ease-out);
     }
-    .mile:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(44, 88, 241, 0.12); }
+    .mile:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(14, 154, 165, 0.12); }
     .mile--0 { background: var(--wb-blue); color: #fff; }
     .mile--3 { background: #ffdb57; }
     .mile__value { font-weight: 700; font-size: min(var(--wb-fs-h3), 6svh); line-height: 1; }
@@ -205,7 +205,7 @@ import { Leader, PURPOSE } from '../../content/about-content';
     .vcard__title { margin-top: var(--wb-space-sm); font-weight: 700; font-size: var(--wb-fs-card-title); }
     .vcard__points { margin-top: var(--wb-space-xs); display: flex; flex-direction: column; gap: 10px; }
     .vcard__points li { position: relative; padding-left: 20px; font-size: var(--wb-fs-body); }
-    .vcard__points li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 8px; height: 8px; border-radius: 50%; background: #ffd04a; }
+    .vcard__points li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 8px; height: 8px; border-radius: 50%; background: #ffc45c; }
 
     /* Leadership: founder */
     .lead { padding: var(--wb-section-y) 0; background: #fff; scroll-margin-top: 80px; }
@@ -217,11 +217,11 @@ import { Leader, PURPOSE } from '../../content/about-content';
       align-items: center;
       padding: clamp(16px, min(2.4vw, 3svh), 40px);
       border-radius: 32px;
-      background: linear-gradient(135deg, #f4f7ff 0%, #e8eeff 100%);
+      background: linear-gradient(135deg, #f0f9fa 0%, #e2f2f3 100%);
     }
     .founder__photo { width: 100%; height: clamp(240px, calc(100svh - 2 * var(--wb-section-y) - 345px), 560px); aspect-ratio: auto; object-fit: cover; object-position: top; border-radius: 24px; }
     .founder__kicker { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.875rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--wb-blue); }
-    .founder__kicker::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #ffd04a; }
+    .founder__kicker::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #ffc45c; }
     .founder__name { margin-top: var(--wb-space-xs); font-weight: 700; font-size: min(var(--wb-fs-h3), 5svh); line-height: 1.1; color: #0f0e09; }
     .founder__role { margin-top: 8px; font-weight: 600; font-size: var(--wb-fs-body); color: var(--wb-blue); }
     .founder__text { margin-top: min(14px, 1.6svh); max-width: 760px; font-size: min(var(--wb-fs-body), 2.4svh); line-height: 1.6; color: var(--wb-ink-600); }
@@ -262,9 +262,9 @@ import { Leader, PURPOSE } from '../../content/about-content';
 
     /* Join */
     .join { padding: var(--wb-section-y) 0; background: #fff; }
-    .join__panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); gap: 32px; align-items: stretch; overflow: hidden; border-radius: 32px; background: linear-gradient(120deg, #2c58f1 0%, #3f6af5 100%); color: #fff; }
+    .join__panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); gap: 32px; align-items: stretch; overflow: hidden; border-radius: 32px; background: linear-gradient(120deg, #0e9aa5 0%, #12b0ba 100%); color: #fff; }
     .join__copy { padding: clamp(28px, 3.6vw, 64px); }
-    .join__kicker { font-weight: 700; font-size: 0.875rem; letter-spacing: 0.12em; text-transform: uppercase; color: #ffd04a; }
+    .join__kicker { font-weight: 700; font-size: 0.875rem; letter-spacing: 0.12em; text-transform: uppercase; color: #ffc45c; }
     .join__title { margin-top: var(--wb-space-xs); font-weight: 700; font-size: min(var(--wb-fs-h2), 7svh); line-height: 1.12; }
     .join__title span { color: #ffd84d; }
     .join__lead { margin-top: var(--wb-space-xs); max-width: 560px; font-size: var(--wb-fs-body); line-height: 1.6; color: rgba(255, 255, 255, 0.88); }

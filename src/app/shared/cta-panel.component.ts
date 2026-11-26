@@ -53,7 +53,7 @@ import { CONSULTATION_HREF } from '../content/site-content';
       background-image:
         linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(120deg, #2c58f1 0%, #3d63f0 100%);
+        linear-gradient(120deg, #0e9aa5 0%, #0f9aa4 100%);
       background-size: 96px 96px, 96px 96px, auto;
       color: #fff;
     }

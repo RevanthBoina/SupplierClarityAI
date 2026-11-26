@@ -137,8 +137,8 @@ import { ProductHeroContent } from '../../../content/content-types';
     :host(.is-animated.is-bob) .chip { animation: drift var(--bob-dur) ease-in-out infinite alternate; }
     /* QuickQode look: one white halo with a soft blue shadow instead of stacked layers, chips over the dots' rest points */
     :host(.is-halo) .orbit__layers span:nth-child(1), :host(.is-halo) .orbit__layers span:nth-child(2), :host(.is-plain) .orbit__layers { display: none; }
-    :host(.is-halo) .orbit__layers span:nth-child(3) { width: calc(var(--logo-size) + 7%); background: #fff; border: 0; box-shadow: 0 14px 40px rgba(44, 88, 241, 0.18), 0 0 0 1px rgba(44, 88, 241, 0.04); }
-    :host(.is-plain) .orbit__logo { box-shadow: 0 16px 40px rgba(44, 88, 241, 0.16); }
+    :host(.is-halo) .orbit__layers span:nth-child(3) { width: calc(var(--logo-size) + 7%); background: #fff; border: 0; box-shadow: 0 14px 40px rgba(14, 154, 165, 0.18), 0 0 0 1px rgba(14, 154, 165, 0.04); }
+    :host(.is-plain) .orbit__logo { box-shadow: 0 16px 40px rgba(14, 154, 165, 0.16); }
     :host(.is-bob) .chip { z-index: 2; }
     :host(.is-bob) .chip--0 { left: 22%; top: 13%; }
     :host(.is-bob) .chip--2 { left: 17%; top: 79%; }

@@ -1,5 +1,5 @@
 /**
- * Copy for the API services page (/services/api-services), from the "API Services V4.1" design.
+ * Copy for the Image APIs page (/services/image-apis).
  * Edit text here, not in the templates.
  * Style: sentence case, no comma before "and", commas instead of dashes, full stops on bullets.
  * Images marked PLACEHOLDER are cut from the design files; replace them with the originals.
@@ -7,22 +7,23 @@
 import { DeliveryContent, HelpContent, HeroContent, ImpactContent } from './content-types';
 
 const IMG = 'assets/img/api/';
+const ENHANCE = '/enhance';
 
 export const API_HERO: HeroContent = {
-  titleLead: 'APIs that turn legacy',
-  titleAccent: 'into leverage.',
+  titleLead: 'Enhancement that turns suppliers',
+  titleAccent: 'into catalog-ready.',
   titleSegments: [
     { text: 'APIs that turn ' },
-    { text: 'legacy', accent: true, breakAfter: true },
+    { text: 'supplier uploads', accent: true, breakAfter: true },
     { text: 'into ' },
-    { text: 'leverage.', accent: true },
+    { text: 'catalog gold.', accent: true },
   ],
-  lead: 'With WhiteBlue’s API services, your core systems connect securely to apps, partners and data, so your business scales faster.',
-  image: IMG + 'hero-network.webp', // PLACEHOLDER
-  imageAlt: 'Illustration of a secure API hub connecting apps, databases and servers',
+  lead: 'With SupplierClarity’s Image APIs, any system can enhance images on demand: your PIM, your seller portal, your mobile app. One call returns a catalog-ready file.',
+  image: IMG + 'hero-network.webp',
+  imageAlt: 'Illustration of the enhancement hub connecting stores, PIMs and marketplaces',
   chips: [
-    { label: 'Modern API styles', sub: 'REST / GraphQL / gRPC', tone: 'blue', pos: 'top-right' },
-    { label: 'OAuth2, JWT', sub: 'for secure user and system access', tone: 'yellow', pos: 'bottom-left' },
+    { label: 'REST + webhooks', sub: 'enhance in one call', tone: 'blue', pos: 'top-right' },
+    { label: 'Batch endpoints', sub: 'for whole catalogs at once', tone: 'yellow', pos: 'bottom-left' },
   ],
 };
 
@@ -30,55 +31,55 @@ export const API_HERO: HeroContent = {
 export const API_INDUSTRIES: HelpContent = {
   eyebrowIcon: 'industries',
   eyebrow: 'Industries',
-  titleLead: 'Every business',
-  titleAccent: 'connects differently.',
-  lead: 'Whatever your scale, the right APIs help you integrate faster, adapt sooner and keep growing.',
-  resultLabel: 'How WhiteBlue helped',
+  titleLead: 'Every catalog',
+  titleAccent: 'enhances differently.',
+  lead: 'Whatever your scale, the right enhancement APIs help you onboard faster, publish sooner and keep converting.',
+  resultLabel: 'How SupplierClarity helped',
   tabs: [
     {
-      label: 'Established enterprises',
+      label: 'Established retailers',
       tone: 'blue',
       icon: 'legacy',
-      kicker: 'Established enterprises',
-      title: 'Legacy holds back new launches.',
+      kicker: 'Established retailers',
+      title: 'Legacy imagery holds back new listings.',
       points: [
-        { text: 'Monolithic systems slow down new products.' },
-        { text: 'Customers and platforms expect secure, standards-based APIs.' },
-        { text: 'Audits need traceable data flows.' },
+        { text: 'Years of supplier photos below today’s standards.' },
+        { text: 'Channels expect consistent, compliant imagery.' },
+        { text: 'QA teams need traceable, auditable enhancement.' },
       ],
-      image: IMG + 'ind-enterprise.webp', // PLACEHOLDER
-      imageAlt: 'Container cranes at a port terminal',
-      resultText: 'A large port operator’s terminal system now shares real-time shipment data with logistics platforms and carriers, through secure APIs built around its core.',
+      image: IMG + 'ind-enterprise.webp',
+      imageAlt: 'A national retailer’s catalog imagery being enhanced at scale',
+      resultText: 'A national retailer’s PIM now enhances every incoming supplier image through one governed API, with quality scores attached to each asset.',
     },
     {
-      label: 'Digital-native businesses',
+      label: 'Digital-native marketplaces',
       tone: 'yellow',
       icon: 'orbit',
-      kicker: 'Digital-native businesses',
-      title: 'Growth that needs integrations to keep up.',
+      kicker: 'Digital-native marketplaces',
+      title: 'Seller growth that needs automation to keep up.',
       points: [
-        { text: 'Third-party integrations multiply fast.' },
-        { text: 'High transaction volumes need fast, reliable APIs.' },
-        { text: 'Real-time experiences need well-governed data.' },
+        { text: 'Seller uploads arrive around the clock.' },
+        { text: 'Listing quality gates must run instantly.' },
+        { text: 'Rejection feedback needs to reach sellers fast.' },
       ],
-      image: IMG + 'ind-digital.webp', // PLACEHOLDER
-      imageAlt: 'A warehouse worker scanning parcels on a conveyor',
-      resultText: 'A fast-growing e-commerce platform handling thousands of daily orders keeps payment gateways and last-mile delivery providers in sync with reliable APIs.',
+      image: IMG + 'ind-digital.webp',
+      imageAlt: 'A marketplace operations lead watching the enhancement queue',
+      resultText: 'A fast-growing marketplace enhances thousands of daily seller uploads through batch endpoints, and publishes only files that pass its rules.',
     },
     {
-      label: 'Ecosystem players',
+      label: 'Brand ecosystems',
       tone: 'plum',
       icon: 'cloud',
-      kicker: 'Ecosystem players',
-      title: 'Your ecosystem, one way in.',
+      kicker: 'Brand ecosystems',
+      title: 'Your brands, one imagery standard.',
       points: [
-        { text: 'Supplier and vendor links are often manual.' },
-        { text: 'Data silos cause delays and errors.' },
-        { text: 'Modern experiences need one unified API layer.' },
+        { text: 'Suppliers and agencies send mixed-quality files.' },
+        { text: 'Manual enhancement causes delays and drift.' },
+        { text: 'Modern retail needs one unified pipeline.' },
       ],
-      image: IMG + 'ind-ecosystem.webp', // PLACEHOLDER
-      imageAlt: 'An engineer checking a tablet beside a robotic arm on a production line',
-      resultText: 'A manufacturer replaced manual file uploads and legacy EDI with one API layer, giving procurement and inventory teams real-time visibility across suppliers.',
+      image: IMG + 'ind-ecosystem.webp',
+      imageAlt: 'A brand team checking enhancement output on a tablet',
+      resultText: 'A consumer-brand group replaced manual touch-ups with one enhancement API, giving every brand team catalog-ready imagery from a single source.',
     },
   ],
 };
@@ -86,48 +87,48 @@ export const API_INDUSTRIES: HelpContent = {
 /** Pinned while the visitor scrolls; each quarter of the scroll shows the next service. */
 export const API_SERVICES_RING: DeliveryContent = {
   eyebrow: 'Services',
-  title: 'Design it. Secure it.',
-  titleAccent: 'Run it at scale.',
-  lead: 'From strategy to security, built for financial services, including credit unions and insurance, and ready to scale as you grow.',
+  title: 'Enhance it. Score it.',
+  titleAccent: 'Publish it everywhere.',
+  lead: 'From a single image to a national catalog, built for retail and marketplace workloads, and ready to scale as you grow.',
   centered: true,
   steps: [
     {
       label: 'Design & strategy', title: 'Design & strategy', tone: 'teal', icon: 'cloud',
-      intro: 'Plan APIs around your growth goals and regulations.',
+      intro: 'Plan enhancement around your channels and acceptance rules.',
       points: [
-        { text: 'API-first architecture for regulated financial workflows.' },
-        { text: 'Domain models for loans, policies, KYC and claims.' },
-        { text: 'OpenAPI specs for reuse and governance.' },
-        { text: 'Documentation and sandboxes for third-party developers.' },
+        { text: 'Rule packs mapped to each marketplace’s requirements.' },
+        { text: 'Category profiles for pack shots, apparel, electronics and art.' },
+        { text: 'Output contracts: size, format, background and naming.' },
+        { text: 'Documentation and sandboxes for your developers.' },
       ],
     },
     {
-      label: 'Modernization', title: 'Modernization', tone: 'green', icon: 'orbit',
-      intro: 'Turn legacy systems into modern, reusable APIs that bring new products to market sooner.',
+      label: 'Enhancement engines', title: 'Enhancement engines', tone: 'green', icon: 'orbit',
+      intro: 'Turn any supplier upload into catalog-ready imagery, on demand.',
       points: [
-        { text: 'Legacy system integration with cloud APIs.' },
-        { text: 'Microservices that replace monoliths.' },
-        { text: 'Event-driven APIs for real-time policies and loans.' },
-        { text: 'REST, GraphQL and gRPC.' },
+        { text: 'Real-ESRGAN-class super-resolution per category.' },
+        { text: 'Background, crop and file-weight normalisation.' },
+        { text: 'Webhooks that fire the moment a job finishes.' },
+        { text: 'REST endpoints with predictable, versioned output.' },
       ],
     },
     {
-      label: 'Gateway & management', title: 'Gateway & management', tone: 'purple', icon: 'database',
-      intro: 'Run, monitor and scale every API as your traffic grows.',
+      label: 'Delivery & management', title: 'Delivery & management', tone: 'purple', icon: 'database',
+      intro: 'Run, monitor and scale enhancement as your catalog grows.',
       points: [
-        { text: 'Azure API Management, AWS API Gateway and GCP.' },
+        { text: 'Autoscaling queues for catalog-sized batches.' },
         { text: 'Rate limiting, traffic shaping and usage metering.' },
-        { text: 'Developer portals, subscriptions and analytics.' },
-        { text: 'Secure partner onboarding.' },
+        { text: 'Quality dashboards, usage analytics and audit trails.' },
+        { text: 'CDN delivery of every enhanced file.' },
       ],
     },
     {
-      label: 'Security', title: 'Security', tone: 'rose', icon: 'shield',
-      intro: 'Security built into every API, from access to compliance.',
+      label: 'Trust & security', title: 'Trust & security', tone: 'rose', icon: 'shield',
+      intro: 'Security built into every call, from access to storage.',
       points: [
-        { text: 'OAuth2 and JWT access control.' },
-        { text: 'OWASP Top 10 coverage.' },
-        { text: 'GDPR, HIPAA and PCI DSS compliance mapping.' },
+        { text: 'OAuth2 and signed-URL access control.' },
+        { text: 'Automatic deletion of processed supplier files.' },
+        { text: 'GDPR-compliant processing agreements.' },
         { text: 'Threat modeling and continuous monitoring.' },
       ],
     },
@@ -136,27 +137,27 @@ export const API_SERVICES_RING: DeliveryContent = {
 
 export const API_CLOUD = {
   eyebrow: 'Infrastructure',
-  titleAccent: 'Cloud ready',
+  titleAccent: 'Catalog-scale',
   titleRest: 'from day one.',
-  lead: 'Your APIs run on highly available cloud platforms that scale as your business grows.',
+  lead: 'Your enhancement runs on highly available infrastructure that scales as your catalog grows.',
   items: [
-    'Multi-cloud API enablement (Azure, AWS, GCP).',
-    'Autoscaling architectures for transaction-heavy operations.',
-    'Hybrid integrations with on-premises core systems across financial services.',
-    'Built-in CI/CD for rapid iteration and testing.',
+    'Autoscaling queues for catalog-sized batches.',
+    'GPU or CPU capacity matched to each category’s budget.',
+    'Hybrid delivery: CDN, direct PIM push or signed URLs.',
+    'Built-in CI/CD for rapid model and rule updates.',
   ],
 };
 
 /** Hovering a card fades its photo, tints the card (tint) and shows the text. */
 export const API_WHY = {
   titleLead: 'Why',
-  titleAccent: 'WhiteBlue?',
-  lead: 'Cloud, data and AI expertise, focused on one thing: connected systems that grow your business.',
+  titleAccent: 'SupplierClarity?',
+  lead: 'Image AI and catalog expertise, focused on one thing: imagery that passes and converts.',
   cards: [
-    { title: 'Fluent in financial services', text: 'From credit unions to insurers, sector know-how in every API we build.', image: IMG + 'why-finance.webp', tint: '#e8efff' }, // PLACEHOLDER image
-    { title: 'Cloud-native by default', text: 'Proven across Azure, AWS and hybrid setups.', image: IMG + 'why-cloud.webp', tint: '#fdedb9' }, // PLACEHOLDER image
-    { title: 'Security in every layer', text: 'Compliance and data protection built in.', image: IMG + 'why-security.webp', tint: '#d5dff8' }, // PLACEHOLDER image
-    { title: 'Strategy before code', text: 'Every API starts with your growth goals.', image: IMG + 'why-strategy.webp', tint: '#f2f5fe' }, // PLACEHOLDER image
+    { title: 'Fluent in retail imagery', text: 'From grocery to fashion, category know-how in every rule pack we build.', image: IMG + 'why-finance.webp', tint: '#e7f5f6' },
+    { title: 'Catalog-scale by default', text: 'Proven on batches from one image to two million.', image: IMG + 'why-cloud.webp', tint: '#fdf2d9' },
+    { title: 'Security in every layer', text: 'Supplier files processed, scored and deleted on schedule.', image: IMG + 'why-security.webp', tint: '#d7ecef' },
+    { title: 'Rules before pixels', text: 'Every pipeline starts with your channel requirements.', image: IMG + 'why-strategy.webp', tint: '#f0f9fa' },
   ],
 };
 
@@ -164,42 +165,42 @@ export const API_IMPACT: ImpactContent = {
   eyebrow: 'Business impact',
   titleLead: 'Get more from every system',
   titleAccent: 'you already run.',
-  lead: 'APIs turn the core systems you’ve invested in into new products, channels and integrations, without replacing them.',
+  lead: 'Enhancement APIs turn the supplier uploads you already receive into catalog-ready assets, without reshoots.',
   items: [
     {
       kicker: 'What it solves', tone: 'teal', icon: 'grid',
-      title: 'Data stuck in system silos.',
-      text: 'Every new product, channel or integration needs custom work, extra cost and longer timelines.',
-      image: IMG + 'impact-solves.webp', // PLACEHOLDER
+      title: 'Imagery stuck below channel standards.',
+      text: 'Every new channel, category or supplier adds custom QA work, extra cost and longer timelines.',
+      image: IMG + 'impact-solves.webp',
     },
     {
       kicker: 'The value it brings', tone: 'purple', icon: 'trend',
-      title: 'New revenue from systems you own.',
-      text: 'Launch digital products and integrations on what you run today, protecting past investment while opening new revenue.',
-      image: IMG + 'impact-value.webp', // PLACEHOLDER
+      title: 'New shelf-ready assets from files you own.',
+      text: 'Publish enhanced imagery on what you receive today, protecting your suppliers’ original investment while opening new channels.',
+      image: IMG + 'impact-value.webp',
     },
     {
       kicker: 'The efficiency you gain', tone: 'green', icon: 'bolt',
-      title: 'Every integration cheaper than the last.',
-      text: 'One secure API layer replaces fragile point-to-point links, so each new connection is faster and costs less.',
-      image: IMG + 'impact-efficiency.webp', // PLACEHOLDER
+      title: 'Every channel cheaper than the last.',
+      text: 'One enhancement API replaces per-channel touch-ups, so each new marketplace is faster and costs less.',
+      image: IMG + 'impact-efficiency.webp',
     },
   ],
   action: {
     kicker: 'See it in action',
-    title: 'InsureLiv, our insurance platform for brokers',
-    text: 'Its API-ready integration sends every package straight to insurer portals, built the way we build APIs for enterprises.',
-    cta: 'Explore InsureLiv',
-    href: '/products/insureliv',
+    title: 'The Clarity Upscaler, live on this site',
+    text: 'The same engine that powers these APIs, running in your browser right now: upload a supplier photo and see the output quality yourself.',
+    cta: 'Try the upscaler',
+    href: ENHANCE,
   },
 };
 
 export const API_CTA = {
-  titleLead: 'Ready to connect',
-  titleAccent: 'what you’ve built?',
-  lead: 'Secure APIs that connect your systems and data, so your business moves faster.',
-  image: IMG + 'cta-servers.webp', // PLACEHOLDER
-  imageAlt: 'Monitors showing network dashboards in a server room',
-  secondaryLabel: 'Explore services',
+  titleLead: 'Ready to enhance',
+  titleAccent: 'what you receive?',
+  lead: 'One enhancement API between your suppliers and your catalog, so every listing goes live sharp.',
+  image: IMG + 'cta-servers.webp',
+  imageAlt: 'Monitors showing enhancement queue dashboards in a server room',
+  secondaryLabel: 'Explore the platform',
   secondaryHref: '/#services',
 };

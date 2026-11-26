@@ -6,7 +6,7 @@
   padding: var(--wb-section-y) 0 clamp(120px, 8.6vw, 165px); /* bottom room for the wordmark */
   /* Figma: deep blue at the bottom fading to #F0F6FF at the top */
   /* Top is transparent so it blends with the scroll-driven page colour */
-  background: linear-gradient(0deg, #2c58f1 -38%, rgba(0, 90, 205, 0.42) 40%, rgba(240, 246, 255, 0) 92%);
+  background: linear-gradient(0deg, #0e9aa5 -38%, rgba(8, 84, 92, 0.42) 40%, rgba(240, 246, 255, 0) 92%);
 }
 
 .footer__grid-lines {
@@ -15,8 +15,8 @@
   height: 834px;
   pointer-events: none;
   background-image:
-    linear-gradient(to right, rgba(44, 88, 241, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(44, 88, 241, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, rgba(14, 154, 165, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 154, 165, 0.07) 1px, transparent 1px);
   background-size: 100px 100px;
   background-position: calc(50% - 900px) 0, 0 0;
   mask-image: linear-gradient(to bottom, #000 60%, transparent);
@@ -83,7 +83,7 @@
   background: #fff;
   border: 1px solid transparent;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  &:focus-within { border-color: var(--wb-blue); box-shadow: 0 0 0 3px rgba(44, 88, 241, 0.15); }
+  &:focus-within { border-color: var(--wb-blue); box-shadow: 0 0 0 3px rgba(14, 154, 165, 0.15); }
 }
 .newsletter__field--error { border-color: var(--wb-red); }
 .newsletter__field input {

@@ -1,19 +1,19 @@
 <section class="pitch" aria-labelledby="pitch-title">
   <div class="pitch__layout wb-container">
     <div class="pitch__copy">
-      <wb-pill-label wbReveal icon="how-we-work" class="pitch__eyebrow">How we work</wb-pill-label>
-      <h2 wbReveal class="wb-h2" id="pitch-title"><span class="wb-accent">Every pitch</span><br />plays differently</h2>
+      <wb-pill-label wbReveal icon="how-we-work" class="pitch__eyebrow">How it works</wb-pill-label>
+      <h2 wbReveal class="wb-h2" id="pitch-title"><span class="wb-accent">Every catalog</span><br />starts differently</h2>
       <p wbReveal [wbRevealDelay]="120" class="wb-lead pitch__lead">
-        Legacy cores, siloed data, manual work, regulation, pressure to scale. Every business faces a different mix, so we study yours before we recommend a single tool.
+        Blurry uploads, low DPI, wrong backgrounds, missing angles, bloated files. Every supplier ships a different mix, so the pipeline studies each image before it enhances it.
       </p>
-      <wb-button wbReveal [wbRevealDelay]="240" class="pitch__cta" href="#case-studies">See how we work</wb-button>
+      <wb-button wbReveal [wbRevealDelay]="240" class="pitch__cta" href="/enhance">See it in action</wb-button>
     </div>
 
     <div
       wbReveal="fade"
       class="pitch__media"
       role="img"
-      aria-label="A cricket pitch marked with the challenges every business faces: legacy core, siloed data, manual work, regulation and scale">
+      aria-label="A workspace scattered with supplier product photos, marked with the challenges every catalog faces: blurry uploads, low DPI, wrong background, missing angles and file bloat">
       <div class="pitch__frame" #frame>
         <img class="pitch__base" src="assets/illustrations/pitch-base.webp" width="1440" height="1120" alt="" />
 
@@ -38,9 +38,9 @@
               <defs>
                 <clipPath id="pitch-ground-clip"><circle cx="0" cy="0" [attr.r]="boundary" /></clipPath>
                 <radialGradient id="pitch-ground-glow" cx="0" cy="0" [attr.r]="boundary" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stop-color="#2c58f1" stop-opacity="0.09" />
-                  <stop offset="0.7" stop-color="#2c58f1" stop-opacity="0.04" />
-                  <stop offset="1" stop-color="#2c58f1" stop-opacity="0.02" />
+                  <stop offset="0" stop-color="#0e9aa5" stop-opacity="0.09" />
+                  <stop offset="0.7" stop-color="#0e9aa5" stop-opacity="0.04" />
+                  <stop offset="1" stop-color="#0e9aa5" stop-opacity="0.02" />
                 </radialGradient>
               </defs>
 
@@ -62,11 +62,6 @@
               <circle class="pitch__mark pitch__mark--boundary" cx="0" cy="0" [attr.r]="boundary"
                       pathLength="1" vector-effect="non-scaling-stroke" />
             </g>
-            <!-- Popping and bowling creases, extended across the field towards the copy -->
-            <line class="pitch__mark pitch__mark--crease" x1="775" y1="362" x2="40" y2="630" pathLength="1"
-                  vector-effect="non-scaling-stroke" style="transition-delay: 300ms" />
-            <line class="pitch__mark pitch__mark--crease" x1="1137" y1="872" x2="250" y2="1196" pathLength="1"
-                  vector-effect="non-scaling-stroke" style="transition-delay: 420ms" />
           </g>
         </svg>
 

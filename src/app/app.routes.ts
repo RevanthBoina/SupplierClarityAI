@@ -2,66 +2,66 @@ import { Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home/home-page.component';
 
 export const routes: Routes = [
-  { path: '', component: HomePageComponent, title: 'WhiteBlue | Deep tech underneath your AI' },
+  { path: '', component: HomePageComponent, title: 'SupplierClarity AI | Catalog-ready images from every supplier' },
   {
-    path: 'services/agentic-ai',
+    path: 'enhance',
+    loadComponent: () => import('./pages/enhance/enhance-page.component').then(m => m.EnhancePageComponent),
+    title: 'Clarity Upscaler — make supplier images catalog-ready | SupplierClarity AI',
+  },
+  {
+    path: 'services/agentic-qa',
     loadComponent: () => import('./pages/agentic-ai/agentic-ai-page.component').then(m => m.AgenticAiPageComponent),
-    title: 'Agentic AI services | WhiteBlue',
+    title: 'Agentic QA services | SupplierClarity AI',
   },
   {
-    path: 'services/infra-automation',
+    path: 'services/workflow-automation',
     loadComponent: () => import('./pages/infra-automation/infra-automation-page.component').then(m => m.InfraAutomationPageComponent),
-    title: 'Infra automation services | WhiteBlue',
+    title: 'Workflow automation services | SupplierClarity AI',
   },
   {
-    path: 'services/data-modernization',
+    path: 'services/catalog-data',
     loadComponent: () => import('./pages/data-modernization/data-modernization-page.component').then(m => m.DataModernizationPageComponent),
-    title: 'Data modernization services | WhiteBlue',
+    title: 'Catalog data modernization | SupplierClarity AI',
   },
   {
-    path: 'services/api-services',
+    path: 'services/image-apis',
     loadComponent: () => import('./pages/api-services/api-services-page.component').then(m => m.ApiServicesPageComponent),
-    title: 'API services | WhiteBlue',
+    title: 'Image APIs | SupplierClarity AI',
   },
   {
-    path: 'products/insureliv',
-    loadComponent: () => import('./pages/insureliv/insureliv-page.component').then(m => m.InsureLivPageComponent),
-    title: 'InsureLiv, AI platform for insurance brokers | WhiteBlue',
-  },
-  {
-    path: 'products/dobby',
+    path: 'products/batchforge',
     loadComponent: () => import('./pages/dobby/dobby-page.component').then(m => m.DobbyPageComponent),
-    title: 'Dobby, AI agent for Slack and Microsoft Teams | WhiteBlue',
+    title: 'BatchForge, bulk catalog processing | SupplierClarity AI',
   },
   {
-    path: 'products/quickqode',
+    path: 'products/pim-connect',
     loadComponent: () => import('./pages/quickqode/quickqode-page.component').then(m => m.QuickQodePageComponent),
-    title: 'QuickQode, AI code generation | WhiteBlue',
+    title: 'PIM Connect, sync imagery everywhere | SupplierClarity AI',
   },
   {
-    path: 'products/fieldzapp',
+    path: 'products/complycheck',
     loadComponent: () => import('./pages/fieldzapp/fieldzapp-page.component').then(m => m.FieldZappPageComponent),
-    title: 'FieldZapp, AI field service app | WhiteBlue',
+    title: 'ComplyCheck, marketplace compliance checks | SupplierClarity AI',
   },
   {
     path: 'company/purpose-leadership',
     loadComponent: () => import('./pages/company/purpose-leadership-page.component').then(m => m.PurposeLeadershipPageComponent),
-    title: 'Purpose & leadership | WhiteBlue',
+    title: 'Purpose & leadership | SupplierClarity AI',
   },
   {
     path: 'company/framework',
     loadComponent: () => import('./pages/company/framework-page.component').then(m => m.FrameworkPageComponent),
-    title: 'The WhiteBlue framework | AI automation every 90 days',
+    title: 'The Clarity framework | SupplierClarity AI',
   },
   {
     path: 'company/social-initiative',
     loadComponent: () => import('./pages/company/social-initiative-page.component').then(m => m.SocialInitiativePageComponent),
-    title: 'Social initiative, Sai Sankalp School | WhiteBlue',
+    title: 'Clarity for Good | SupplierClarity AI',
   },
   {
     path: 'company/global-presence',
     loadComponent: () => import('./pages/company/global-presence-page.component').then(m => m.GlobalPresencePageComponent),
-    title: 'Global presence: India, UAE and USA | WhiteBlue',
+    title: 'Global presence | SupplierClarity AI',
   },
   { path: '**', redirectTo: '' },
 ];

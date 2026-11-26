@@ -118,7 +118,7 @@ import { CASE_STUDIES, CONSULTATION_HREF } from '../../content/site-content';
     @keyframes case-wrap { 0% { opacity: 0; } 45% { opacity: 0; } 100% { opacity: 1; } }
     .case--featured {
       border-color: var(--wb-blue);
-      box-shadow: 4px 4px 15px rgba(44, 88, 241, 0.15);
+      box-shadow: 4px 4px 15px rgba(14, 154, 165, 0.15);
       background:
         linear-gradient(-90deg, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.75) 45%),
         linear-gradient(150deg, #eef3ff 0%, #d4e2ff 50%, #8fb0f7 100%);
@@ -189,7 +189,7 @@ import { CASE_STUDIES, CONSULTATION_HREF } from '../../content/site-content';
       color: var(--wb-blue);
     }
     .case__link::after { content: ''; position: absolute; inset: 0; } /* whole card is clickable */
-    .case--featured:hover { box-shadow: 4px 8px 24px rgba(44, 88, 241, 0.18); }
+    .case--featured:hover { box-shadow: 4px 8px 24px rgba(14, 154, 165, 0.18); }
 
     .cases__cta { margin-top: var(--wb-space-md); display: flex; justify-content: center; }
 

@@ -118,8 +118,8 @@ import { ImpactContent } from '../content/content-types';
       inset: 0;
       pointer-events: none;
       background-image:
-        linear-gradient(to right, rgba(44, 88, 241, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(44, 88, 241, 0.05) 1px, transparent 1px);
+        linear-gradient(to right, rgba(14, 154, 165, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(14, 154, 165, 0.05) 1px, transparent 1px);
       background-size: 120px 120px;
       background-position: calc(50% - 900px) 0, 0 0;
       mask-image: linear-gradient(to bottom, #000, transparent 60%);
@@ -187,7 +187,7 @@ import { ImpactContent } from '../content/content-types';
       border: 1px solid #e6ebf7;
       border-radius: 28px;
       background: #f2f5fd;
-      box-shadow: 0 18px 40px rgba(44, 88, 241, 0.08);
+      box-shadow: 0 18px 40px rgba(14, 154, 165, 0.08);
     }
     /* contain, not cover: the whole illustration is shown at the same scale whatever the box shape (no zoomed-in crops) */
     .art img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.8s var(--wb-ease-out); }
@@ -204,7 +204,7 @@ import { ImpactContent } from '../content/content-types';
       background: linear-gradient(90deg, #4a58e0 0%, #5a6ae8 100%);
       color: #fff;
     }
-    .action__kicker { font-weight: 700; font-size: 0.9375rem; letter-spacing: 0.1em; text-transform: uppercase; color: #ffd04a; }
+    .action__kicker { font-weight: 700; font-size: 0.9375rem; letter-spacing: 0.1em; text-transform: uppercase; color: #ffc45c; }
     .action__title { margin-top: 10px; font-weight: 700; font-size: var(--wb-fs-card-title); line-height: 1.3; }
     .action__text { margin-top: 10px; font-size: var(--wb-fs-body); line-height: 1.55; color: rgba(255, 255, 255, 0.9); }
     .action__cta {
@@ -222,7 +222,7 @@ import { ImpactContent } from '../content/content-types';
       color: #3a49c9;
       transition: background-color 0.25s ease;
     }
-    .action__cta:hover { background: #ffd04a; }
+    .action__cta:hover { background: #ffc45c; }
     .action__cta span { display: inline-block; transition: transform 0.3s var(--wb-ease-out); }
     .action__cta:hover span { transform: translateX(4px); }
 

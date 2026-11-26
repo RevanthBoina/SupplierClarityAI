@@ -27,7 +27,7 @@ import { AGENTIC_CTA, AGENTIC_HERO, AGENTIC_IMPACT } from '../../content/agentic
     <wb-agentic-hero wbSectionTheme="#ffffff" />
     <main>
       <wb-agentic-why wbSectionTheme="#ffffff" />
-      <wb-agentic-help wbSectionTheme="#f4f7ff" />
+      <wb-agentic-help wbSectionTheme="#f0f9fa" />
       <wb-agentic-delivery wbSectionTheme="#ffffff" />
       <wb-impact-rows wbSectionTheme="#f7f8ff" [content]="impact" />
       <wb-cta-panel wbSectionTheme="#ffffff" [title]="cta.titleLead" [accent]="cta.titleAccent" [lead]="cta.lead"

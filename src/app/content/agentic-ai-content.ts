@@ -9,42 +9,42 @@ import { DeliveryContent, HelpContent, HeroContent, ImpactContent } from './cont
 const IMG = 'assets/img/agentic/';
 
 export const AGENTIC_HERO: HeroContent = {
-  titleLead: 'AI agents that run your processes,',
-  titleAccent: 'with fees tied to results.',
-  lead: 'WhiteBlue builds governed AI agents grounded in your own knowledge, connects them to your systems and measures them against KPIs you agree up front.',
-  image: IMG + 'hero-workstation.webp', // PLACEHOLDER
-  imageAlt: 'A monitor and laptop showing an AI agent workflow connected to business apps',
+  titleLead: 'QA agents that review your catalog,',
+  titleAccent: 'with acceptance tied to results.',
+  lead: 'SupplierClarity builds governed QA agents grounded in your channel rules, connects them to your catalog systems and measures them against acceptance KPIs you agree up front.',
+  image: IMG + 'hero-workstation.webp',
+  imageAlt: 'A monitor and laptop showing a QA agent workflow connected to catalog systems',
   chips: [
-    { label: 'Custom copilots', tone: 'blue' },
+    { label: 'QA copilots', tone: 'blue' },
     { label: 'Governed autonomy', tone: 'blue' },
-    { label: 'RAG-enabled knowledge agents', tone: 'yellow' },
+    { label: 'Rule-grounded verdicts', tone: 'yellow' },
   ],
 };
 
 /** Each shape flips to a coloured panel with a short explanation on hover, focus or tap. */
 export const AGENTIC_WHY = {
-  eyebrow: 'Why agentic AI',
-  titleLead: 'Scale like a capability center.',
-  titleAccent: 'Invest in results.',
-  lead: 'Cloud, data and APIs give your business a modern foundation. Agentic AI puts it to work, turning systems into outcomes you can measure.',
+  eyebrow: 'Why agentic QA',
+  titleLead: 'Scale like a QA center.',
+  titleAccent: 'Invest in acceptance.',
+  lead: 'Pipelines give your catalog a modern foundation. Agentic QA puts it to work, turning imagery into acceptance rates you can measure.',
   shapes: [
     {
       shape: 'circle', icon: 'target', tone: 'blue',
       // Non-breaking hyphens keep "Results-as-a-Service" on one line
-      kicker: 'RaaS (Results‑as‑a‑Service)', title: 'Fees linked to outcomes',
-      detail: 'We agree the KPI, the baseline and how it is measured before we build. Fees are tied to the improvement we verify, not to hours logged.',
+      kicker: 'AaaS (Acceptance‑as‑a‑Service)', title: 'Fees linked to acceptance',
+      detail: 'We agree the acceptance KPI, the baseline and how it is measured before we build. Fees are tied to the improvement we verify, not to hours logged.',
       image: IMG + 'why-outcomes.webp',
     },
     {
       shape: 'cloud', icon: 'code', tone: 'purple',
-      kicker: 'Knowledge-grounded', title: 'Agents that use your facts',
-      detail: 'Agents answer from your approved knowledge, not from guesswork. Policies, definitions and ownership are structured so answers are accurate and traceable to a source.',
+      kicker: 'Rule-grounded', title: 'Agents that use your rules',
+      detail: 'Agents judge from your approved channel rules, not from guesswork. Requirements, definitions and ownership are structured so verdicts are accurate and traceable to a rule.',
       image: IMG + 'why-knowledge.webp',
     },
     {
       shape: 'parallelogram', icon: 'database', tone: 'yellow',
       kicker: 'Your foundation', title: 'Built on what you already run',
-      detail: 'Agents connect to the data, APIs and cloud you already run, so value arrives faster and nothing has to be rebuilt.',
+      detail: 'Agents connect to the PIM, DAM and marketplaces you already run, so value arrives faster and nothing has to be rebuilt.',
       image: IMG + 'why-foundation.webp',
     },
   ],
@@ -54,41 +54,41 @@ export const AGENTIC_HELP: HelpContent = {
   eyebrow: 'How we help',
   titleLead: 'Agents in production.',
   titleAccent: 'Engineers on the ground.',
-  lead: 'RAG-powered copilots that work alongside your people, agents built on proven agentic AI frameworks that scale across functions and on-site engineers who make it all run.',
+  lead: 'Rule-grounded QA copilots that work alongside your reviewers, agents built on proven evaluation frameworks that scale across categories and on-site engineers who make it all run.',
   resultLabel: 'The result',
   tabs: [
     {
-      label: 'Grounded in your knowledge',
+      label: 'Grounded in your rules',
       tone: 'blue',
       icon: 'code',
-      title: 'Agents grounded in your knowledge',
-      intro: 'Agents are only as reliable as the knowledge behind them. We ground them in your knowledge, then put them to work:',
+      title: 'Agents grounded in your rules',
+      intro: 'Agents are only as reliable as the rules behind them. We ground them in your channel requirements, then put them to work:',
       points: [
-        { term: 'Structured knowledge (OKF):', text: 'definitions, policies, ownership and business rules written as linked, version-controlled knowledge, so agents follow explicit relationships instead of inferring them.' },
-        { term: 'Retrieval (RAG):', text: 'large document sets such as contracts, tickets and manuals are searched at query time, and each answer cites its source.' },
-        { term: 'Action:', text: 'agents carry out the workflow across your systems within approved limits, and escalate to a person when confidence is low.' },
+        { term: 'Structured rule packs:', text: 'resolution, background, crop and file-weight requirements written as linked, version-controlled rules, so agents follow explicit thresholds instead of inferring them.' },
+        { term: 'Retrieval (RAG):', text: 'large rule sets across marketplaces and categories are searched at review time, and each verdict cites the rule it applied.' },
+        { term: 'Action:', text: 'agents carry out the review across your systems within approved limits, and escalate borderline cases to a person.' },
       ],
-      note: 'OKF is an early open specification from Google Cloud. We build knowledge in a portable, version-controlled form that works with or without it.',
-      image: IMG + 'help-team.webp', // PLACEHOLDER
-      imageAlt: 'An engineer walks colleagues through an agent workflow on a large screen',
-      resultText: 'Answers your teams can trust and your auditors can trace.',
+      note: 'Rule packs are built in a portable, version-controlled form that works with any PIM or QA workflow.',
+      image: IMG + 'help-team.webp',
+      imageAlt: 'An engineer walks colleagues through a QA agent workflow on a large screen',
+      resultText: 'Verdicts your teams can trust and your auditors can trace.',
     },
     {
-      label: 'AI-first, outcome-driven results',
+      label: 'AI-first, acceptance-driven results',
       tone: 'purple',
       icon: 'target',
-      title: 'Results-as-a-Service (RaaS)',
-      intro: 'You pay for the outcome, not the effort. Every engagement runs in four steps:',
+      title: 'Acceptance-as-a-Service (AaaS)',
+      intro: 'You pay for the acceptance rate, not the effort. Every engagement runs in four steps:',
       points: [
-        { term: 'Baseline:', text: 'measure today’s performance: cost per case, turnaround time, error rate.' },
+        { term: 'Baseline:', text: 'measure today’s performance: first-pass acceptance, cost per image, turnaround time.' },
         { term: 'Target:', text: 'agree the KPI, the improvement and how it will be verified.' },
-        { term: 'Deliver:', text: 'build, deploy and operate the agent.' },
+        { term: 'Deliver:', text: 'build, deploy and operate the QA agent.' },
         { term: 'Measure:', text: 'report against the baseline. Fees follow the verified result.' },
       ],
-      note: 'Best for processes with a clear, measurable outcome that you can attribute to the agent.',
-      image: IMG + 'help-raas.webp', // PLACEHOLDER
-      imageAlt: 'A business leader reviews performance dashboards',
-      resultText: 'Budget linked to business impact, and risk shared.',
+      note: 'Best for catalogs with a clear, measurable acceptance outcome that you can attribute to the agent.',
+      image: IMG + 'help-raas.webp',
+      imageAlt: 'A catalog leader reviews acceptance dashboards',
+      resultText: 'Budget linked to catalog impact, and risk shared.',
     },
     {
       // Condensed from the four-row comparison table in the walkthrough (see chat for the rationale).
@@ -100,13 +100,13 @@ export const AGENTIC_HELP: HelpContent = {
       options: [
         {
           name: 'Conventional delivery',
-          text: 'Our team builds in WhiteBlue delivery centers and works with yours through scheduled reviews, with documentation and training at each milestone.',
-          bestWhen: 'requirements are clear and systems are well documented.',
+          text: 'Our team builds in SupplierClarity delivery centers and works with yours through scheduled reviews, with rule documentation and training at each milestone.',
+          bestWhen: 'requirements are clear and channel rules are well documented.',
         },
         {
           name: 'Forward-deployed team',
-          text: 'Our engineers work inside your business, next to the people who run the process, with daily feedback and paired working until your team takes over.',
-          bestWhen: 'workflows are complex, change often or sit in regulated or legacy environments.',
+          text: 'Our engineers work inside your business, next to the people who run the catalog, with daily feedback and paired working until your team takes over.',
+          bestWhen: 'workflows are complex, rules change often or sit across legacy systems.',
         },
       ],
       image: IMG + 'help-delivery.webp', // PLACEHOLDER
@@ -119,9 +119,9 @@ export const AGENTIC_HELP: HelpContent = {
 /** Pinned while the visitor scrolls; each third of the scroll shows the next step. */
 export const AGENTIC_DELIVERY: DeliveryContent = {
   eyebrow: 'Services',
-  title: 'Intelligent agent delivery',
-  subtitle: 'AI agents that act, learn and optimize, securely.',
-  lead: 'WhiteBlue ensures agents are not black boxes, but governed, explainable and aligned to measurable outcomes. Every agent is tied to business KPIs, such as cost, efficiency, compliance and growth.',
+  title: 'Intelligent QA delivery',
+  subtitle: 'QA agents that review, learn and optimize, securely.',
+  lead: 'SupplierClarity ensures QA agents are not black boxes, but governed, explainable and aligned to measurable outcomes. Every agent is tied to catalog KPIs, such as acceptance rate, cost per image, compliance and time-to-shelf.',
   steps: [
     {
       label: 'Measurable outcomes',
@@ -129,9 +129,9 @@ export const AGENTIC_DELIVERY: DeliveryContent = {
       tone: 'teal',
       icon: 'radar',
       points: [
-        { strong: 'Lower cost per transaction', text: 'through process automation.' },
-        { strong: 'Faster cycle times', text: 'from intake to resolution.' },
-        { strong: 'Higher accuracy,', text: 'tracked against an agreed evaluation set.' },
+        { strong: 'Lower cost per image', text: 'through automated review.' },
+        { strong: 'Faster verdicts', text: 'from upload to publish-ready.' },
+        { strong: 'Higher acceptance,', text: 'tracked against an agreed evaluation set.' },
         { strong: 'Always available', text: 'within approved limits, with human escalation.' },
       ],
     },
@@ -141,12 +141,12 @@ export const AGENTIC_DELIVERY: DeliveryContent = {
       tone: 'purple',
       icon: 'chip',
       points: [
-        { strong: 'Function copilots:', text: 'finance, HR, compliance and customer service copilots built into your existing workflows.' },
-        { strong: 'Knowledge-grounded agents:', text: 'RAG with structured knowledge (OKF) for accurate, source-cited answers.' },
-        { strong: 'Cross-system orchestration:', text: 'agents coordinate across your APIs, SaaS apps and cloud platforms.' },
+        { strong: 'Category copilots:', text: 'grocery, fashion, electronics and marketplace QA copilots built into your existing workflows.' },
+        { strong: 'Rule-grounded agents:', text: 'RAG with structured rule packs for accurate, rule-cited verdicts.' },
+        { strong: 'Cross-system orchestration:', text: 'agents coordinate across your PIM, DAM, APIs and marketplaces.' },
         { strong: 'Governed autonomy:', text: 'role-based permissions, approval steps, full audit trails and ongoing evaluation.' },
       ],
-      link: { label: 'See function copilots at work in Dobby', href: '/products/dobby' },
+      link: { label: 'See QA copilots at work in ComplyCheck', href: '/products/complycheck' },
     },
     {
       label: 'Business benefits',
@@ -155,9 +155,9 @@ export const AGENTIC_DELIVERY: DeliveryContent = {
       icon: 'chart',
       points: [
         { strong: 'Faster path to production:', text: 'agents move from pilot to live use with governance in place from the start.' },
-        { strong: 'Spend tied to results:', text: 'RaaS links fees to KPIs.' },
-        { strong: 'Freed-up teams:', text: 'routine work is handled by agents, so people focus on exceptions and decisions.' },
-        { strong: 'Compliance by design:', text: 'every action is logged, explainable and reviewable.' },
+        { strong: 'Spend tied to acceptance:', text: 'AaaS links fees to KPIs.' },
+        { strong: 'Freed-up teams:', text: 'routine review is handled by agents, so people focus on exceptions and decisions.' },
+        { strong: 'Compliance by design:', text: 'every verdict is logged, explainable and reviewable.' },
       ],
     },
   ],
@@ -167,43 +167,43 @@ export const AGENTIC_IMPACT: ImpactContent = {
   eyebrow: 'Business impact',
   titleLead: 'Faster operations. Better output.',
   titleAccent: 'Real growth.',
-  lead: 'Agentic AI turns routine processes into measurable returns: leaner operations, faster delivery and room to grow, with every agent tied to a KPI you agree up front.',
+  lead: 'Agentic QA turns routine review into measurable returns: leaner QA, faster listings and room to grow, with every agent tied to a KPI you agree up front.',
   items: [
     {
       kicker: 'What it solves', tone: 'teal', icon: 'grid',
-      title: 'Manual work that drains budget.',
-      text: 'Manual, repetitive processes that slow teams down and drain budget across finance, HR, compliance and service.',
-      image: IMG + 'impact-solves.webp', // PLACEHOLDER
+      title: 'Manual review that drains budget.',
+      text: 'Manual, repetitive image QA that slows listings down and drains budget across categories, channels and suppliers.',
+      image: IMG + 'impact-solves.webp',
     },
     {
       kicker: 'The value it brings', tone: 'purple', icon: 'trend',
-      title: 'Pay for results, not hours.',
-      textLead: 'With', strong: 'Results-as-a-Service (RaaS)',
-      text: ', fees are tied to KPIs you agree up front, so you pay for verified business results, not hours logged.',
-      image: IMG + 'impact-value.webp', // PLACEHOLDER
+      title: 'Pay for acceptance, not hours.',
+      textLead: 'With', strong: 'Acceptance-as-a-Service (AaaS)',
+      text: ', fees are tied to KPIs you agree up front, so you pay for verified catalog results, not hours logged.',
+      image: IMG + 'impact-value.webp',
     },
     {
       kicker: 'The efficiency you gain', tone: 'green', icon: 'spark',
       title: 'Agents handle routine, people drive growth.',
-      text: 'Governed agents handle the routine within approved limits, so work moves faster and your people focus on decisions that drive growth.',
-      image: IMG + 'impact-efficiency.webp', // PLACEHOLDER
+      text: 'Governed agents handle the routine within approved limits, so review moves faster and your people focus on decisions that drive growth.',
+      image: IMG + 'impact-efficiency.webp',
     },
   ],
   action: {
     kicker: 'See it in action',
-    title: 'Dobby, our AI agent for Slack and Teams',
-    text: 'Built on this agentic AI practice, Dobby pulls answers, builds reports and handles routine requests in the chat.',
-    cta: 'Explore Dobby',
-    href: '/products/dobby',
+    title: 'ComplyCheck, our compliance engine',
+    text: 'Built on this agentic QA practice, ComplyCheck reviews every batch and flags only what needs a human.',
+    cta: 'Explore ComplyCheck',
+    href: '/products/complycheck',
   },
 };
 
 export const AGENTIC_CTA = {
-  titleLead: 'Which process should an agent',
-  titleAccent: 'take on first?',
-  lead: 'Tell us the KPI that matters. We’ll show how an agent could move it, which delivery model suits you and how we’d measure it.',
-  image: IMG + 'cta-workstations.webp', // PLACEHOLDER
-  imageAlt: 'Monitors showing agent dashboards in an office at dusk',
-  secondaryLabel: 'Explore services',
+  titleLead: 'Which category should an agent',
+  titleAccent: 'review first?',
+  lead: 'Tell us the acceptance KPI that matters. We’ll show how an agent could move it, which delivery model suits you and how we’d measure it.',
+  image: IMG + 'cta-workstations.webp',
+  imageAlt: 'Monitors showing QA agent dashboards in an office at dusk',
+  secondaryLabel: 'Explore the platform',
   secondaryHref: '/#services',
 };

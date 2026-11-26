@@ -1,24 +1,26 @@
 /**
- * Copy for the QuickQode product page (/products/quickqode), from the "QuickQode V1.1" design.
+ * Copy for the PIM Connect product page (/products/pim-connect), from the "QuickQode V1.1" design.
  * Hero animation follows the QuickQode recording. Images marked PLACEHOLDER are cut from the design and screenshots.
  */
 import { CapabilitiesContent, CtaBandContent, ImpactContent, ProductHeroContent, ProductVideoContent } from './content-types';
 
 const IMG = 'assets/img/quickqode/';
-const DEMO = '#contact';
+const DEMO = '/enhance';
+const ENHANCE = '/enhance';
+const QA_HREF = '/products/complycheck';
 
 export const QQ_HERO: ProductHeroContent = {
   title: [
-    { text: 'Faster delivery.', breakAfter: true },
-    { text: 'Smarter code.', breakAfter: true },
-    { text: 'Powered by AI.', accent: true },
+    { text: 'Enhanced imagery.', breakAfter: true },
+    { text: 'Every channel.', breakAfter: true },
+    { text: 'In sync.', accent: true },
   ],
-  lead: 'QuickQode writes, tests, documents and translates code with AI, so your teams deliver more in less time.',
+  lead: 'PIM Connect syncs enhanced imagery into your PIM, marketplaces and store systems automatically, so every channel serves the same catalog-ready files.',
   primary: { label: 'Request demo', href: DEMO },
-  secondary: { label: 'Watch QuickQode in action', href: '/products/quickqode#quickqode-video' },
-  logo: IMG + 'logo-orb.png', // PLACEHOLDER
-  logoAlt: 'QuickQode logo',
-  accent: '#1fae8c',
+  secondary: { label: 'Watch PIM Connect in action', href: '/products/pim-connect#pim-connect-video' },
+  logo: 'assets/img/logo-pimconnect.svg',
+  logoAlt: 'PIM Connect logo',
+  accent: '#12505e',
   // Motion measured from the QuickQode recording: all dots swing together (≈1.95s each way) while the logo bobs
   orbit: {
     innerR: 136,
@@ -44,34 +46,34 @@ export const QQ_HERO: ProductHeroContent = {
 export const QQ_VIDEO: ProductVideoContent = {
   id: 'quickqode-video',
   title: [
-    { text: 'From prompt to', breakAfter: true },
-    { text: 'working code,', breakAfter: true },
-    { text: 'in minutes.', accent: true },
+    { text: 'From enhancement', breakAfter: true },
+    { text: 'to every channel,', breakAfter: true },
+    { text: 'automatically.', accent: true },
   ],
-  lead: 'QuickQode puts AI to work across the development cycle. Describe what you need, and it generates the code, tests and documentation, so your developers spend their time on what moves the business forward.',
-  poster: IMG + 'video-poster.webp', // PLACEHOLDER
-  posterAlt: 'Two developers reviewing generated code on a monitor',
-  caption: 'Watch QuickQode video',
-  duration: '3:00 min',
-  videoUrl: 'https://www.youtube.com/embed/2fS7PvZhJvM', // youtu.be/2fS7PvZhJvM
+  lead: 'PIM Connect puts the finished catalog to work. Enhanced images land in your PIM with quality scores attached, then flow to marketplaces and stores through connectors that keep every channel in sync.',
+  poster: IMG + 'video-poster.webp',
+  posterAlt: 'Two catalog leads reviewing channel sync status on a monitor',
+  caption: 'Watch PIM Connect video',
+  duration: '2:30 min',
+  videoUrl: '',
 };
 
 export const QQ_CAPABILITIES: CapabilitiesContent = {
   eyebrow: 'Capabilities',
   eyebrowIcon: 'capabilities',
-  titleLead: 'What QuickQode does',
-  titleAccent: 'for your developers',
+  titleLead: 'What PIM Connect does',
+  titleAccent: 'for your catalog',
   intervalMs: 3500,
   items: [
-    { name: 'Natural language code generation', image: IMG + 'cap-1.webp',
-      text: 'Type what you need in plain language. QuickQode’s AI turns it into precise, working code with a single command.' },
-    { name: 'Automated unit test generation', image: IMG + 'cap-2.webp', // PLACEHOLDER
-      text: 'AI writes your unit tests automatically, saving hours of repetitive effort while keeping quality and reliability high.' },
-    { name: 'Smart code comments', image: IMG + 'cap-3.webp', // PLACEHOLDER
-      text: 'AI-generated comments make every line easy to read, review and hand over, keeping your codebase well-documented as it grows.' },
-    { name: 'Code translation across languages', image: IMG + 'cap-4.webp', // PLACEHOLDER
-      text: 'Move code between languages like C# and Java in a fraction of the time, ideal for modernizing legacy systems.',
-      link: { label: 'modernizing legacy systems', href: '/services/api-services' } },
+    { name: 'PIM and DAM sync', image: IMG + 'cap-1.webp',
+      text: 'Enhanced images land in your PIM or DAM in place, with names, variants and metadata preserved, so nothing falls out of order.' },
+    { name: 'Marketplace connectors', image: IMG + 'cap-2.webp',
+      text: 'Channel connectors push the right file size, crop and background to each marketplace, so listings pass the first time.' },
+    { name: 'Quality metadata', image: IMG + 'cap-3.webp',
+      text: 'Every synced image carries its quality scores, so category teams can sort, filter and prioritize by measured clarity.' },
+    { name: 'Webhook triggers', image: IMG + 'cap-4.webp',
+      text: 'Real-time webhooks tell your systems the moment enhancement finishes, ideal for just-in-time publishing.',
+      link: { label: 'image APIs', href: '/services/image-apis' } },
   ],
 };
 
@@ -79,28 +81,28 @@ export const QQ_IMPACT: ImpactContent = {
   eyebrow: 'Business impact',
   titleLead: 'Every developer,',
   titleAccent: 'delivering more.',
-  lead: 'AI does the heavy lifting on repetitive code, so your developers stay focused on building what’s next.',
+  lead: 'Automated sync does the heavy lifting after enhancement, so your catalog teams stay focused on assortment, not file juggling.',
   items: [
-    { kicker: 'What it solves', tone: 'teal', icon: 'grid', title: 'Hours lost to repetitive code.',
-      text: 'Developer hours spent on boilerplate, test writing, documentation and manual rewrites of legacy code.', image: IMG + 'impact-solves.webp' },
-    { kicker: 'The value it brings', tone: 'purple', icon: 'trend', title: 'Ship sooner, modernize safely.',
-      text: 'Features reach customers sooner, and legacy systems move to modern stacks without starting over.', image: IMG + 'impact-value.webp' },
-    { kicker: 'The efficiency you gain', tone: 'green', icon: 'bolt', title: 'Every sprint covers more ground.',
-      text: 'AI handles routine coding, so every sprint covers more ground with the same team.', image: IMG + 'impact-efficiency.webp' },
+    { kicker: 'What it solves', tone: 'teal', icon: 'grid', title: 'Channels that drift out of sync.',
+      text: 'Marketplaces showing old images, PIM exports lagging behind and teams re-uploading files channel by channel.', image: IMG + 'impact-solves.webp' },
+    { kicker: 'The value it brings', tone: 'purple', icon: 'trend', title: 'One catalog, everywhere it sells.',
+      text: 'Every channel serves the same enhanced files, so the brand looks consistent and listings stay compliant.', image: IMG + 'impact-value.webp' },
+    { kicker: 'The efficiency you gain', tone: 'green', icon: 'bolt', title: 'Publish without the busywork.',
+      text: 'Sync runs itself, so the same team keeps more channels current without re-uploading anything.', image: IMG + 'impact-efficiency.webp' },
   ],
   action: {
-    kicker: 'Ship it with',
-    title: 'Infra automation by WhiteBlue',
-    text: 'Run QuickQode-generated code on automated, self-correcting cloud infrastructure.',
-    cta: 'Explore infra automation',
-    href: '/services/infra-automation',
+    kicker: 'Check it with',
+    title: 'Compliance checks by ComplyCheck',
+    text: 'Run channel rules against every synced image before it goes live.',
+    cta: 'Explore ComplyCheck',
+    href: QA_HREF,
   },
 };
 
 export const QQ_CTA: CtaBandContent = {
-  titleLead: 'Put AI to work',
-  titleAccent: 'on your codebase.',
-  lead: 'Book a demo and watch QuickQode generate, test and document code for your stack, live.',
+  titleLead: 'Put enhanced imagery',
+  titleAccent: 'to work everywhere.',
+  lead: 'Book a demo and watch PIM Connect sync a live batch into your PIM and marketplaces.',
   primary: { label: 'Request demo', href: DEMO },
-  secondary: { label: 'Explore agentic AI', href: '/services/agentic-ai' },
+  secondary: { label: 'Try the upscaler', href: ENHANCE },
 };

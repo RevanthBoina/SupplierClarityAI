@@ -49,12 +49,12 @@
 .nav--solid {
   border-color: transparent;
   background: var(--wb-blue);
-  box-shadow: 0 10px 30px rgba(44, 88, 241, 0.25);
+  box-shadow: 0 10px 30px rgba(14, 154, 165, 0.25);
 }
 
 /* Once the page scrolls off the blue hero, the white links need a solid blue backing */
 .nav--scrolled {
-  background: rgba(44, 88, 241, 0.92);
+  background: rgba(14, 154, 165, 0.92);
   box-shadow: 0 10px 30px rgba(11, 21, 51, 0.18);
 }
 
@@ -66,14 +66,26 @@
   padding: 6px 8px 6px 20px;
 }
 .nav__logo img { transition: width 0.35s ease; }
-.nav--scrolled .nav__logo img { width: clamp(120px, 7.5vw, 140px); }
+.nav--scrolled .nav__logo img { width: 40px; }
+.nav__wordmark { transition: font-size 0.35s ease; }
 .nav__links { transition: font-size 0.35s ease; }
 .nav--scrolled .nav__links { font-size: clamp(0.9375rem, 0.95vw, 1.0625rem); }
 .nav--scrolled .nav__cta { --wb-fs-button: clamp(0.9375rem, 0.9vw, 1.0625rem); --wb-btn-pad: 8px 20px; }
 .nav--scrolled .nav__toggle { width: 42px; height: 42px; }
 
-.nav__logo { flex: none; margin-right: auto; }
-.nav__logo img { width: clamp(140px, 10vw, 192px); height: auto; }
+.nav__logo { flex: none; margin-right: auto; display: inline-flex; align-items: center; gap: 12px; }
+.nav__logo img { width: clamp(40px, 3vw, 47px); height: auto; transition: width 0.35s ease; }
+.nav--scrolled .nav__logo img { width: 40px; }
+.nav__wordmark {
+  font-family: var(--wb-font-display);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1.5vw, 1.6rem);
+  letter-spacing: -0.01em;
+  color: var(--wb-white);
+  white-space: nowrap;
+}
+.nav__wordmark em { font-style: normal; color: var(--wb-yellow); }
+.nav--scrolled .nav__wordmark { font-size: clamp(1.1rem, 1.2vw, 1.3rem); }
 
 .nav__links {
   display: flex;

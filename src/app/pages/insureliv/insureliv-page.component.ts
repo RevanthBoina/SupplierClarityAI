@@ -67,7 +67,7 @@ import { INSURELIV } from '../../content/insureliv-content';
       object-fit: cover;
       border: 8px solid #fff;
       border-radius: 22px;
-      box-shadow: 0 18px 40px rgba(44, 88, 241, 0.14);
+      box-shadow: 0 18px 40px rgba(14, 154, 165, 0.14);
     }
 
     .cta { position: relative; overflow: hidden; padding: calc(var(--wb-section-y) * 1.1) 0; background: #ffdb57; }

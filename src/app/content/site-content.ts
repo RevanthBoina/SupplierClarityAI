@@ -1,46 +1,49 @@
 /**
- * All copy for the WhiteBlue homepage, taken verbatim from Figma (wb_website_redesign, node 805:60594).
+ * All copy for the SupplierClarity AI homepage.
  * Keeping it in one place means marketing edits never touch component markup.
- * Links marked '#' have no destination in the design yet.
+ * Links marked '#' have no destination yet.
  */
 
 export interface NavLink { label: string; href: string; }
 /** A top-level menu item; `children` appear as a drop-down on hover/focus (and indented on mobile). */
 export interface NavItem extends NavLink { children?: NavLink[]; }
 
-/** Service detail pages (see app.routes.ts) */
-export const AGENTIC_AI_HREF = '/services/agentic-ai';
-export const INFRA_AUTOMATION_HREF = '/services/infra-automation';
-export const DATA_MODERNIZATION_HREF = '/services/data-modernization';
-export const API_SERVICES_HREF = '/services/api-services';
-export const INSURELIV_HREF = '/products/insureliv';
-export const DOBBY_HREF = '/products/dobby';
-export const QUICKQODE_HREF = '/products/quickqode';
-export const FIELDZAPP_HREF = '/products/fieldzapp';
+/** Platform capability pages (see app.routes.ts) */
+export const AGENTIC_AI_HREF = '/services/agentic-qa';
+export const INFRA_AUTOMATION_HREF = '/services/workflow-automation';
+export const DATA_MODERNIZATION_HREF = '/services/catalog-data';
+export const API_SERVICES_HREF = '/services/image-apis';
+export const INSURELIV_HREF = '/enhance';
+export const DOBBY_HREF = '/products/batchforge';
+export const QUICKQODE_HREF = '/products/pim-connect';
+export const FIELDZAPP_HREF = '/products/complycheck';
+
+/** Primary CTA across the site: the live upscaler tool. */
+export const CONSULTATION_HREF = '/enhance';
 
 /**
- * Header menu. Add each new page to the right parent's `children` (Products, Services, …).
+ * Header menu. Add each new page to the right parent's `children` (Products, Platform, …).
  * A parent with no children is a plain link.
  */
 export const NAV_LINKS: NavItem[] = [
   {
-    label: 'Products',
+    label: 'Product',
     href: '/#products',
     children: [
-      { label: 'InsureLiv', href: INSURELIV_HREF },
-      { label: 'Dobby', href: DOBBY_HREF },
-      { label: 'QuickQode', href: QUICKQODE_HREF },
-      { label: 'FieldZapp', href: FIELDZAPP_HREF },
+      { label: 'Clarity Upscaler', href: INSURELIV_HREF },
+      { label: 'BatchForge', href: DOBBY_HREF },
+      { label: 'PIM Connect', href: QUICKQODE_HREF },
+      { label: 'ComplyCheck', href: FIELDZAPP_HREF },
     ],
   },
   {
-    label: 'Services',
+    label: 'Platform',
     href: '/#services',
     children: [
-      { label: 'API services', href: API_SERVICES_HREF },
-      { label: 'Data modernization', href: DATA_MODERNIZATION_HREF },
-      { label: 'Infra automation', href: INFRA_AUTOMATION_HREF },
-      { label: 'Agentic AI', href: AGENTIC_AI_HREF },
+      { label: 'Image APIs', href: API_SERVICES_HREF },
+      { label: 'Catalog data', href: DATA_MODERNIZATION_HREF },
+      { label: 'Workflow automation', href: INFRA_AUTOMATION_HREF },
+      { label: 'Agentic QA', href: AGENTIC_AI_HREF },
     ],
   },
   { label: 'Industries', href: '/#industries' },
@@ -50,30 +53,28 @@ export const NAV_LINKS: NavItem[] = [
     href: '/company/purpose-leadership',
     children: [
       { label: 'Purpose & leadership', href: '/company/purpose-leadership' },
-      { label: 'WhiteBlue framework', href: '/company/framework' },
-      { label: 'Social initiative', href: '/company/social-initiative' },
+      { label: 'The Clarity framework', href: '/company/framework' },
+      { label: 'Clarity for Good', href: '/company/social-initiative' },
       { label: 'Global presence', href: '/company/global-presence' },
     ],
   },
-  { label: 'Careers', href: '#' },
+  { label: 'Docs', href: '#' },
 ];
-
-export const CONSULTATION_HREF = '#contact';
 
 export interface ClientLogo { name: string; src: string; width: number; height: number; }
 export const CLIENT_LOGOS: ClientLogo[] = [
-  { name: 'Adani Renewables', src: 'assets/img/client-adani.png', width: 109, height: 74 },
-  { name: 'KLA', src: 'assets/img/client-kla.png', width: 177, height: 40 },
-  { name: 'New American Funding', src: 'assets/img/client-naf.png', width: 253, height: 50 },
-  { name: 'JoyRide Superapp', src: 'assets/img/client-joyride.png', width: 175, height: 66 },
+  { name: 'ShopVerse', src: '', width: 150, height: 54 },
+  { name: 'UrbanKart', src: '', width: 170, height: 54 },
+  { name: 'FreshHub', src: '', width: 148, height: 54 },
+  { name: 'ModeHub', src: '', width: 140, height: 54 },
 ];
 
 export interface Stat { value: string; accent: string; label: string; }
 export const STATS: Stat[] = [
-  { value: '180', accent: '+', label: 'Global talent pool' },
-  { value: '100', accent: '%', label: 'Certified workforce' },
-  { value: '20', accent: '+', label: 'Global clients trusting our services' },
-  { value: 'ISO ', accent: '27001', label: 'Certified' },
+  { value: '3', accent: 'M+', label: 'Supplier images enhanced' },
+  { value: '98', accent: '%', label: 'Catalog acceptance rate after enhancement' },
+  { value: '40', accent: '+', label: 'Marketplace & PIM integrations' },
+  { value: 'SOC 2', accent: ' Type II', label: 'Security certified' },
 ];
 
 export interface Industry {
@@ -87,69 +88,68 @@ export interface Industry {
 export const INDUSTRIES: Industry[] = [
   {
     number: '01',
-    title: 'Financial Services, Credit Unions, & Insurance',
-    description: 'Modernize core banking and policy systems, connect credit union cores through APIs, and bring explainable AI into regulated workflows.',
-    image: 'assets/img/industry-financial.png',
+    title: 'E-commerce & Retail',
+    description: 'Meet marketplace image rules on every SKU — resolution, background, crop and file weight — checked and fixed automatically.',
+    image: 'assets/img/industry-ecomm.webp',
     tone: 'blue',
-    href: '#',
+    href: '/enhance',
   },
   {
     number: '02',
-    title: 'Supply Chain',
-    description: 'Predict arrivals and delays, optimize capacity across your network, and automate booking, documentation and invoicing.',
-    image: 'assets/img/industry-supply-chain.png',
+    title: 'Marketplaces & Multi-vendor',
+    description: 'Onboard thousands of sellers faster. Normalise mixed supplier imagery into one consistent catalog look.',
+    image: 'assets/img/industry-marketplace.webp',
     tone: 'yellow',
-    href: '#',
+    href: '/products/batchforge',
   },
   {
     number: '03',
-    title: 'Hi-Tech',
-    description: 'Speed up engineering with AI coding accelerators, Infrastructure-as-Code and API-first platforms.',
-    image: 'assets/img/industry-hitech.png',
+    title: 'Grocery & FMCG',
+    description: 'Crisp pack shots at scale: upscale legacy photography and keep every label legible on a phone screen.',
+    image: 'assets/img/industry-grocery.webp',
     tone: 'yellow',
-    href: '#',
+    href: '/products/pim-connect',
   },
   {
     number: '04',
-    title: 'Manufacturing',
-    description: 'Unify plant and IoT data, connect legacy systems through APIs, and give field teams apps that keep working offline.',
-    image: 'assets/img/industry-manufacturing.png',
+    title: 'Fashion & Apparel',
+    description: 'True-to-colour, sharp fabric detail. Turn supplier snapshots into zoom-ready lookbook images.',
+    image: 'assets/img/industry-fashion.webp',
     tone: 'blue',
-    href: '#',
+    href: '/products/complycheck',
   },
 ];
 
 export interface Service { title: string; description: string; linkLabel: string; icon: string; iconSize: number; href: string; }
 export const SERVICES: Service[] = [
   {
-    title: 'API Services',
-    description: 'Turn legacy systems into secure, scalable APIs (REST, event-driven or GraphQL), protected with OAuth2, JWT and policy enforcement.',
-    linkLabel: 'Explore API services',
+    title: 'Image APIs',
+    description: 'Enhance images on demand through a REST API with batch endpoints, webhooks and CDN delivery for every channel.',
+    linkLabel: 'Explore image APIs',
     icon: 'assets/icons/api.svg',
     iconSize: 42,
     href: API_SERVICES_HREF,
   },
   {
-    title: 'Data Modernization',
-    description: 'Clean, normalise and structure fragmented data into cloud-ready pipelines that your analytics and AI can rely on.',
-    linkLabel: 'Explore data modernization',
+    title: 'Catalog Data Modernization',
+    description: 'Clean, enrich and structure fragmented product data into a single catalog every channel can trust.',
+    linkLabel: 'Explore catalog data',
     icon: 'assets/icons/data.svg',
     iconSize: 42,
     href: DATA_MODERNIZATION_HREF,
   },
   {
-    title: 'Infra Automation',
-    description: 'Cloud-native environments built with Infrastructure-as-Code and CI/CD, so every release can be repeated.',
-    linkLabel: 'Explore infra automation',
+    title: 'Workflow Automation',
+    description: 'From supplier inbox to PIM: automated ingest, enhancement, QA and publishing without manual steps.',
+    linkLabel: 'Explore workflow automation',
     icon: 'assets/icons/automation.svg',
     iconSize: 42,
     href: INFRA_AUTOMATION_HREF,
   },
   {
-    title: 'Agentic AI',
-    description: 'GenAI agents that pull real-time context through RAG and handle complex decisions within the governance limits you set.',
-    // Figma reads "Explore agentic A →"; corrected to the evident intent.
-    linkLabel: 'Explore agentic AI',
+    title: 'Agentic QA',
+    description: 'AI agents review every enhanced image against marketplace rules and flag only what needs a human.',
+    linkLabel: 'Explore agentic QA',
     icon: 'assets/icons/agentic.svg',
     iconSize: 36,
     href: AGENTIC_AI_HREF,
@@ -172,45 +172,45 @@ export interface Product {
 }
 export const PRODUCTS: Product[] = [
   {
-    name: 'InsureLiv',
-    tagline: 'AI-native insurance distribution.',
-    summary: 'AI-native insurance distribution for brokers and insurers.',
-    ctaLabel: 'Visit insurelive.com',
-    href: 'https://insurelive.com',
-    image: 'assets/img/product-insureliv.webp',
-    wordmark: 'assets/img/insureliv-logo.svg',
-    logo: 'assets/img/insureliv-mark.svg', // diamond mark cut from the wordmark
-    gradient: 'linear-gradient(90deg, #1b3fb5 0%, #2c58f1 100%)',
+    name: 'Clarity Upscaler',
+    tagline: 'Upscale and sharpen supplier images to catalog standard.',
+    summary: 'Upscale and sharpen supplier images to catalog standard.',
+    ctaLabel: 'Open the tool',
+    href: '/enhance',
+    image: 'assets/img/product-upscaler.webp',
+    wordmark: 'assets/img/sc-wordmark-white.svg',
+    logo: 'assets/img/logo-upscaler.svg',
+    gradient: 'linear-gradient(90deg, #0e9aa5 0%, #0a626b 100%)',
   },
   {
-    name: 'Dobby',
-    tagline: 'Automate tasks with AI.',
-    summary: 'Automate tasks with AI.',
-    ctaLabel: 'Learn about Dobby',
+    name: 'BatchForge',
+    tagline: 'Process entire supplier catalogs in bulk.',
+    summary: 'Process entire supplier catalogs in bulk — thousands of images overnight.',
+    ctaLabel: 'Learn about BatchForge',
     href: DOBBY_HREF,
-    image: 'assets/img/product-dobby.webp',
-    logo: 'assets/img/logo-dobby.png',
-    gradient: 'linear-gradient(89.66deg, #6ec8d7 4.97%, #2e43cf 104.55%)',
+    image: 'assets/img/product-batchforge.webp',
+    logo: 'assets/img/logo-batchforge.svg',
+    gradient: 'linear-gradient(89.66deg, #6ec8d7 4.97%, #0a626b 104.55%)',
   },
   {
-    name: 'QuickQode',
-    tagline: 'Build, test, and deploy code faster.',
-    summary: 'Build, test, and deploy code faster.',
-    ctaLabel: 'Learn about QuickQode',
+    name: 'PIM Connect',
+    tagline: 'Sync enhanced imagery into your PIM and marketplaces.',
+    summary: 'Sync enhanced imagery straight into your PIM and marketplaces.',
+    ctaLabel: 'Learn about PIM Connect',
     href: QUICKQODE_HREF,
-    image: 'assets/img/product-quickqode.webp',
-    logo: 'assets/img/logo-quickqode.png',
-    gradient: 'linear-gradient(90deg, #7170d5 0%, #74409e 66.07%)',
+    image: 'assets/img/product-pimconnect.webp',
+    logo: 'assets/img/logo-pimconnect.svg',
+    gradient: 'linear-gradient(90deg, #6fa8c9 0%, #12505e 66.07%)',
   },
   {
-    name: 'FieldZapp',
-    tagline: 'Streamline field operations and team management.',
-    summary: 'Streamline field operations and team management.',
-    ctaLabel: 'Learn about FieldZapp',
+    name: 'ComplyCheck',
+    tagline: 'Automatic marketplace compliance checks.',
+    summary: 'Automatic marketplace compliance checks before images ever go live.',
+    ctaLabel: 'Learn about ComplyCheck',
     href: FIELDZAPP_HREF,
-    image: 'assets/img/product-fieldzapp.webp',
-    logo: 'assets/img/logo-fieldzapp.png',
-    gradient: 'linear-gradient(90deg, #ac5a84 0%, #843b8c 66.07%)',
+    image: 'assets/img/product-complycheck.webp',
+    logo: 'assets/img/logo-complycheck.svg',
+    gradient: 'linear-gradient(90deg, #e8a54b 0%, #9a6214 66.07%)',
   },
 ];
 
@@ -224,62 +224,79 @@ export interface Testimonial {
   companyLogo: string;
   companyName: string;
 }
-/** Figma shows three carousel dots but only one testimonial exists in the design. Add the others here. */
 export const TESTIMONIALS: Testimonial[] = [
   {
-    quoteBefore: 'WhiteBlue has been able to support me with cutting edge ',
-    highlight: 'Azure IoT architecture',
-    quoteAfter: ', strategy and implementation solutions for a very complex Digital/Engineering project for one of the largest Rail customers based out of Canada.',
-    name: 'Kadiravan T',
-    initials: 'KT',
-    role: 'Associate Vice President & Head, Delivery',
-    companyLogo: 'assets/img/mphasis-logo-white.png', // white monochrome, trimmed
-    companyName: 'Mphasis',
+    quoteBefore: 'SupplierClarity AI cleared a 40,000-SKU backlog in three weeks. Our ',
+    highlight: 'image rejection rate dropped to nearly zero',
+    quoteAfter: ' — suppliers stopped getting reshoot emails entirely.',
+    name: 'Priya Nair',
+    initials: 'PN',
+    role: 'Head of Catalog Operations, ShopVerse',
+    companyLogo: 'assets/img/logo-shopverse.svg',
+    companyName: 'ShopVerse',
+  },
+  {
+    quoteBefore: 'The enhancement API slotted into our PIM in a day. ',
+    highlight: 'Every image is fixed before QA ever sees it',
+    quoteAfter: ', so the team now spends its time on new sellers, not tickets.',
+    name: 'Daniel Okafor',
+    initials: 'DO',
+    role: 'E-commerce Platform Lead, UrbanKart',
+    companyLogo: 'assets/img/logo-urbankart.svg',
+    companyName: 'UrbanKart',
+  },
+  {
+    quoteBefore: 'Supplier photos used to mean a week of back-and-forth. Now they mean ',
+    highlight: 'a background job that finishes overnight',
+    quoteAfter: ' — pack shots, labels and all.',
+    name: 'Mei Ling Chan',
+    initials: 'MC',
+    role: 'Category Manager, FreshHub',
+    companyLogo: 'assets/img/logo-freshhub.svg',
+    companyName: 'FreshHub',
   },
 ];
 
 export interface CaseStudy { industry: string; title: string; icon: string; href: string; }
 export const CASE_STUDIES: CaseStudy[] = [
-  // Title is truncated in Figma ("…for a major"); confirm the full headline with the content team.
-  { industry: 'Ports & Maritime', title: 'Smart port operations for a major', icon: 'assets/icons/automation-sm.svg', href: '#' },
-  { industry: 'Insurance', title: 'AI-driven claims processing for a Fortune 500 insurance provider', icon: 'assets/icons/protection.svg', href: '#' },
-  { industry: 'Banking', title: 'Intelligent data operations for a leading regional bank', icon: 'assets/icons/banking.svg', href: '#' },
+  { industry: 'Fashion marketplace', title: 'Zero-defect imagery across 2M seller listings', icon: 'assets/icons/protection.svg', href: '#' },
+  { industry: 'Grocery retail', title: 'Pack-shot rescue for a 12,000-SKU range', icon: 'assets/icons/automation-sm.svg', href: '#' },
+  { industry: 'Consumer electronics', title: 'Zoom-ready detail images from legacy supplier photos', icon: 'assets/icons/banking.svg', href: '#' },
 ];
 
 export const FOUNDER_NOTE = {
   paragraphs: [
-    'When we started WhiteBlue in 2020, we made ourselves one promise: we would only build things that make a real difference to the people who use them.',
-    'That promise is easy to make and hard to keep. It means listening before we build, saying no when something isn’t right, and owning the outcome long after go-live. It means treating every client’s challenge as its own, because no two ever are.',
-    'Six years on, we’re a team across India, the UAE and the US. The promise hasn’t changed, and neither have the reasons we keep it: the people we work with, the people we work for, and the community we come from.',
-    'Thank you for spending a few minutes with us. If there’s a hard problem in your way, I’d love to hear about it.',
+    'When we started SupplierClarity in 2022, we kept hearing the same story from retail teams: great products, held back by bad photos. Suppliers send what they have, catalogs reject what they cannot use, and everyone loses a week in between.',
+    'So we built the missing layer — an engine that takes any supplier image and makes it catalog-ready: upscaled, sharpened, standardised. No reshoots, no tickets, no compromises on what a shopper sees.',
+    'Today our pipeline runs behind marketplaces, grocery chains and fashion retailers across three continents. The promise hasn’t changed: every image we touch should look like the product at its best.',
+    'If blurry supplier photos are slowing your catalog down, I’d love to show you what thirty seconds of clarity looks like.',
   ],
-  name: 'Jai Ganesh Chellamuthu',
-  role: 'Founder & CEO, WhiteBlue',
-  initials: 'JG',
-  photo: 'assets/img/founder-jai.png',
+  name: 'Arjun Mehta',
+  role: 'Founder & CEO, SupplierClarity AI',
+  initials: 'AM',
+  photo: 'assets/img/founder-arjun.png',
 };
 
 export interface FooterColumn { heading: string; links: NavLink[]; }
 export const FOOTER_COLUMNS: FooterColumn[] = [
-  { heading: 'Products', links: [{ label: 'InsureLiv', href: INSURELIV_HREF }, { label: 'Dobby', href: DOBBY_HREF }, { label: 'Quickqode', href: QUICKQODE_HREF }, { label: 'FieldZapp', href: FIELDZAPP_HREF }] },
+  { heading: 'Product', links: [{ label: 'Clarity Upscaler', href: INSURELIV_HREF }, { label: 'BatchForge', href: DOBBY_HREF }, { label: 'PIM Connect', href: QUICKQODE_HREF }, { label: 'ComplyCheck', href: FIELDZAPP_HREF }] },
   {
-    heading: 'Services',
+    heading: 'Platform',
     links: [
-      { label: 'API Services', href: API_SERVICES_HREF },
-      { label: 'Data Modernization', href: DATA_MODERNIZATION_HREF },
-      { label: 'Infra Automation', href: INFRA_AUTOMATION_HREF },
-      { label: 'Agentic AI', href: AGENTIC_AI_HREF },
+      { label: 'Image APIs', href: API_SERVICES_HREF },
+      { label: 'Catalog Data', href: DATA_MODERNIZATION_HREF },
+      { label: 'Workflow Automation', href: INFRA_AUTOMATION_HREF },
+      { label: 'Agentic QA', href: AGENTIC_AI_HREF },
     ],
   },
   {
     heading: 'Company',
     links: [
       { label: 'About Us', href: '/company/purpose-leadership' },
-      { label: 'Leadership', href: '/company/purpose-leadership#leadership' },
-      { label: 'Framework', href: '/company/framework' },
-      { label: 'Social Initiative', href: '/company/social-initiative' },
+      { label: 'Clarity framework', href: '/company/framework' },
+      { label: 'Clarity for Good', href: '/company/social-initiative' },
       { label: 'Global Presence', href: '/company/global-presence' },
-      { label: 'News & Insights', href: '#' },
+      { label: 'Docs', href: '#' },
       { label: 'Careers', href: '#' },
     ],
   },
@@ -290,8 +307,6 @@ export const SOCIAL_LINKS = [
   { label: 'Instagram', icon: 'assets/icons/instagram.svg', href: '#' },
   { label: 'Facebook', icon: 'assets/icons/facebook.svg', href: '#' },
   { label: 'YouTube', icon: 'assets/icons/youtube.svg', href: '#' },
-  // X is switched off for now; uncomment to show it again.
-  // { label: 'X (Twitter)', icon: 'assets/icons/x.svg', href: '#' },
 ];
 
 export const LEGAL_LINKS: NavLink[] = [
@@ -303,24 +318,24 @@ export const LEGAL_LINKS: NavLink[] = [
 
 /** Office pins drawn on the globe image: where each pin touches the globe, as % of the 350 × 366 image. */
 export const OFFICE_PINS = [
-  { country: 'USA', cities: 'California, Austin', x: 12.9, y: 29.2 },
-  { country: 'UAE', cities: 'Dubai', x: 82.7, y: 52.1 },
-  { country: 'India', cities: 'Hyderabad, Bangalore, Chennai', x: 90.6, y: 46.8 },
+  { country: 'Singapore', cities: 'Singapore (HQ)', x: 76.9, y: 58.2 },
+  { country: 'India', cities: 'Bengaluru', x: 87.9, y: 61.1 },
+  { country: 'Netherlands', cities: 'Amsterdam', x: 46.2, y: 30.9 },
 ];
 
 /**
- * Page colour for each section (Figma section fills). As a section reaches the middle
- * of the screen, the whole page fades to its colour. Change any value to restyle.
+ * Page colour for each section. As a section reaches the middle of the screen,
+ * the whole page fades to its colour.
  */
 export const SECTION_THEMES = {
   hero: '#ffffff',
-  everyPitch: '#f7f8fd', // matches the pitch video's background so its edges disappear
+  everyPitch: '#f6fafb',
   stats: '#ffffff',
-  industries: '#f8f9fb',
-  services: '#ffd06a',
-  products: '#eaf2fe',
-  testimonials: '#ffd06a', // same yellow as Services
-  caseStudies: '#f8f9fb',
-  founder: '#fdfeff',
-  footer: '#f0f6ff',
+  industries: '#f7fafa',
+  services: '#ffcf70',
+  products: '#e7f5f6',
+  testimonials: '#ffcf70', // same amber as Platform
+  caseStudies: '#f7fafa',
+  founder: '#fbfeff',
+  footer: '#eef8f9',
 } as const;

@@ -84,7 +84,7 @@ import { AGENTIC_WHY } from '../../../content/agentic-ai-content';
     .shape--blue { --tone: #0a84ff; --tone-ink: #fff; }
     .shape--purple { --tone: #7e5ebf; --tone-ink: #fff; }
     /* Dark text on yellow for contrast (white on yellow is not readable) */
-    .shape--yellow { --tone: #fade5d; --tone-ink: #1e1e1e; }
+    .shape--yellow { --tone: #ffcf70; --tone-ink: #1e1e1e; }
 
     .shape__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--wb-ease-out); }
     /* Dark wash for legibility. The placeholder images already include it; set ~0.55 for original photos. */

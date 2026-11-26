@@ -61,7 +61,7 @@ import { PillLabelComponent } from '../../../shared/pill-label.component';
       object-fit: cover;
       border: 8px solid #fff;
       border-radius: 28px;
-      box-shadow: 0 24px 60px rgba(44, 88, 241, 0.16);
+      box-shadow: 0 24px 60px rgba(14, 154, 165, 0.16);
       animation: hero-in 0.9s var(--wb-ease-out) both;
     }
     @keyframes hero-in { from { opacity: 0; transform: translateY(18px) scale(0.98); } to { opacity: 1; transform: none; } }
@@ -82,7 +82,7 @@ import { PillLabelComponent } from '../../../shared/pill-label.component';
       animation: chip-float 5s ease-in-out infinite alternate;
     }
     .chip::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--wb-blue); }
-    .chip--1::before { background: #ffd04a; }
+    .chip--1::before { background: #ffc45c; }
     .chip--0 { right: -3%; top: 8%; }
     .chip--1 { left: -6%; top: 46%; animation-delay: -1.6s; }
     .chip--2 { right: 6%; bottom: -4%; animation-delay: -3.2s; }

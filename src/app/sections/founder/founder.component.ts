@@ -84,7 +84,7 @@ import { FOUNDER_NOTE } from '../../content/site-content';
       height: 88px;
       margin-top: var(--wb-space-md);
       border-radius: 50%;
-      box-shadow: 0 0 0 4px #fff, 0 0 0 5px var(--wb-blue-border), 0 10px 24px rgba(44, 88, 241, 0.18);
+      box-shadow: 0 0 0 4px #fff, 0 0 0 5px var(--wb-blue-border), 0 10px 24px rgba(14, 154, 165, 0.18);
     }
     .note__portrait img, .note__portrait-fallback { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; display: block; }
     .note__portrait-fallback {

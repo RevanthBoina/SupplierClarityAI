@@ -116,7 +116,7 @@ import { FRAMEWORK } from '../../content/about-content';
       </section>
 
       <!-- Capabilities -->
-      <section class="caps" wbSectionTheme="#f4f7ff" aria-labelledby="fcaps-title">
+      <section class="caps" wbSectionTheme="#f0f9fa" aria-labelledby="fcaps-title">
         <div class="wb-container">
           <wb-section-head icon="services" [eyebrow]="c.capabilities.eyebrow" [title]="c.capabilities.titleLead" [accent]="c.capabilities.titleAccent" [lead]="c.capabilities.lead" headingId="fcaps-title" />
           <div class="caps__grid">
@@ -147,7 +147,7 @@ import { FRAMEWORK } from '../../content/about-content';
     .dial__ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
     .dial__track { fill: none; stroke: #e3e9fb; stroke-width: 14; }
     .dial__progress { fill: none; stroke: var(--wb-blue); stroke-width: 14; stroke-linecap: round; stroke-dasharray: 1; transition: stroke-dashoffset 0.9s var(--wb-ease-out); }
-    .dial__core { position: absolute; inset: 22%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border-radius: 50%; background: linear-gradient(160deg, #f4f7ff, #e6edff); box-shadow: inset 0 0 0 1px #dfe6fa; padding: 8%; }
+    .dial__core { position: absolute; inset: 22%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border-radius: 50%; background: linear-gradient(160deg, #f0f9fa, #e2f2f3); box-shadow: inset 0 0 0 1px #d3e9eb; padding: 8%; }
     .dial__days { font-weight: 700; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1; color: var(--wb-blue); }
     .dial__unit { font-weight: 600; font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase; color: #44506e; }
     .dial__now { margin-top: 10px; font-size: clamp(0.8125rem, 0.9vw, 1rem); line-height: 1.4; color: var(--wb-ink-600); min-height: 2.8em; }
@@ -164,7 +164,7 @@ import { FRAMEWORK } from '../../content/about-content';
     }
     .dial__n { font-size: 0.75rem; color: var(--wb-blue); }
     .dial__stage.is-on { background: var(--wb-blue); color: #fff; transform: scale(1.06); }
-    .dial__stage.is-on .dial__n { color: #ffd04a; }
+    .dial__stage.is-on .dial__n { color: #ffc45c; }
     .dial__stage--0 { left: 50%; top: 4%; }
     .dial__stage--1 { left: 96%; top: 50%; }
     .dial__stage--2 { left: 50%; top: 96%; }
@@ -174,11 +174,11 @@ import { FRAMEWORK } from '../../content/about-content';
     .stories { padding: var(--wb-section-y) 0; background: #f7f8ff; }
     .story { margin-top: var(--wb-space-lg); display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 72px); align-items: center; }
     .story--flip .story__art { order: 2; }
-    .story__art { margin: 0; overflow: hidden; border-radius: 28px; box-shadow: 0 20px 50px rgba(44, 88, 241, 0.12); }
+    .story__art { margin: 0; overflow: hidden; border-radius: 28px; box-shadow: 0 20px 50px rgba(14, 154, 165, 0.12); }
     .story__art img { display: block; width: 100%; height: min(520px, calc(100svh - 2 * var(--wb-section-y) - 60px)); object-fit: cover; transition: transform 0.8s var(--wb-ease-out); }
     .story:hover .story__art img { transform: scale(1.04); }
     .story__kicker { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.875rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--wb-blue); }
-    .story__kicker::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #ffd04a; }
+    .story__kicker::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #ffc45c; }
     .story__title { margin-top: 10px; font-weight: 700; font-size: var(--wb-fs-h3); line-height: 1.15; color: #0f0e09; }
     .story__client { margin-top: 8px; font-size: var(--wb-fs-body); color: var(--wb-ink-600); }
     .story__stat { margin-top: var(--wb-space-xs); font-size: var(--wb-fs-body); color: var(--wb-ink-600); }
@@ -218,7 +218,7 @@ import { FRAMEWORK } from '../../content/about-content';
     .diff__text { margin-top: 8px; font-size: var(--wb-fs-body); line-height: 1.6; color: var(--wb-ink-600); }
 
     /* Capabilities */
-    .caps { padding: var(--wb-section-y) 0; background: #f4f7ff; }
+    .caps { padding: var(--wb-section-y) 0; background: #f0f9fa; }
     .caps__grid { margin-top: min(var(--wb-space-lg), 4svh); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--wb-gap-cards); }
     .ccard { position: relative; padding: clamp(18px, min(2.4vw, 3.4svh), 40px); border-radius: 22px; background: #fff; box-shadow: 0 10px 30px rgba(28, 44, 110, 0.06); transition: transform 0.4s var(--wb-ease-out), box-shadow 0.4s var(--wb-ease-out); }
     .ccard:hover { transform: translateY(-6px); box-shadow: 0 20px 44px rgba(28, 44, 110, 0.12); }
@@ -226,7 +226,7 @@ import { FRAMEWORK } from '../../content/about-content';
     .ccard__title { margin-top: min(var(--wb-space-xs), 1.8svh); font-weight: 700; font-size: min(var(--wb-fs-card-title), 3.4svh); color: #0f0e09; }
     .ccard__points { margin-top: var(--wb-space-xs); display: flex; flex-direction: column; gap: 8px; }
     .ccard__points li { position: relative; padding-left: 18px; font-size: min(var(--wb-fs-body), 2.3svh); line-height: 1.5; color: var(--wb-ink-600); }
-    .ccard__points li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 50%; background: #ffd04a; }
+    .ccard__points li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 50%; background: #ffc45c; }
 
     @media (max-width: 640px) { .dial { width: min(calc(100% - 96px), 320px); } }
     @media (prefers-reduced-motion: reduce) { .dial__progress, .story__art img, .pcard, .ccard { transition: none; } }

@@ -4,9 +4,9 @@
   position: relative;
   overflow: hidden;
   padding: 32px 0 clamp(40px, 2.6vw, 50px);
-  /* Figma: white at the bottom, through 40% #005ACD, up to #2C58F1 at the top */
+  /* SupplierClarity: white at the bottom, through 40% deep-sea teal, up to clarity teal at the top */
   /* Bottom is transparent so the scroll-driven page colour shows through */
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 24%, rgba(0, 90, 205, 0.4) 44%, var(--wb-blue) 74%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 24%, rgba(8, 84, 92, 0.4) 44%, var(--wb-blue) 74%);
 }
 
 /* 100px grid of hairlines, white at 20%, fading out towards the logos */

@@ -90,7 +90,7 @@ import { HelpContent } from '../../../content/content-types';
   `,
   styles: `
     :host { display: block; --wb-fs-lead: min(clamp(1.0625rem, 1.3vw, 1.5625rem), 2.6svh); --wb-fs-h2: min(clamp(2.25rem, 4.06vw, 4.875rem), 6.6svh, 3.9vw); } /* one-screen: lead scales with screen height */
-    .help { padding: var(--wb-section-y) 0; background: #f4f7ff; font-family: var(--wb-font-body); }
+    .help { padding: var(--wb-section-y) 0; background: #f0f9fa; font-family: var(--wb-font-body); }
 
     .help__layout { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(32px, 4vw, 80px); align-items: center; }
     .help__intro { display: flex; flex-direction: column; align-items: flex-start; }
@@ -120,7 +120,7 @@ import { HelpContent } from '../../../content/content-types';
     .tabs__tab--blue { --tone: #0a84ff; --tone-soft: #e6f1ff; --tone-ink: #fff; --tone-text: #0a6fd8; }
     .tabs__tab--purple { --tone: #7e5ebf; --tone-soft: #efe9fa; --tone-ink: #fff; --tone-text: #6a49ad; }
     .tabs__tab--plum { --tone: #85398a; --tone-soft: #f4e8f5; --tone-ink: #fff; --tone-text: #85398a; }
-    .tabs__tab--yellow { --tone: #fade5d; --tone-soft: #fdf5d2; --tone-ink: #1e1e1e; --tone-text: #6b5600; }
+    .tabs__tab--yellow { --tone: #ffcf70; --tone-soft: #fdf5d2; --tone-ink: #1e1e1e; --tone-text: #6b5600; }
     .tabs__tab:not(.tabs__tab--active):hover { background: var(--tone-soft); color: var(--tone-text); }
     .tabs__tab--active { background: var(--tone); color: var(--tone-ink); font-weight: 600; }
 
@@ -135,10 +135,10 @@ import { HelpContent } from '../../../content/content-types';
     }
     .detail .photo { order: -1; }
     @keyframes detail-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-    .detail--blue { --tone: #0a84ff; --tone-ink: #fff; --bullet: #ffd04a; --label: #0a84ff; }
-    .detail--purple { --tone: #7e5ebf; --tone-ink: #fff; --bullet: #ffd04a; --label: #7e5ebf; }
-    .detail--yellow { --tone: #fade5d; --tone-ink: #1e1e1e; --bullet: #2c58f1; --label: #2c58f1; }
-    .detail--plum { --tone: #85398a; --tone-ink: #fff; --bullet: #ffd04a; --label: #2c58f1; }
+    .detail--blue { --tone: #0a84ff; --tone-ink: #fff; --bullet: #ffc45c; --label: #0a84ff; }
+    .detail--purple { --tone: #7e5ebf; --tone-ink: #fff; --bullet: #ffc45c; --label: #7e5ebf; }
+    .detail--yellow { --tone: #ffcf70; --tone-ink: #1e1e1e; --bullet: #0e9aa5; --label: #0e9aa5; }
+    .detail--plum { --tone: #85398a; --tone-ink: #fff; --bullet: #ffc45c; --label: #0e9aa5; }
     .detail--yellow .card__title { color: var(--wb-blue); } /* blue title on yellow, as in the design */
     .detail--yellow .card__title-icon { background: rgba(255, 255, 255, 0.45); }
     /* Cards with a kicker (API services design): roomier spacing and larger text, as in the mockup */

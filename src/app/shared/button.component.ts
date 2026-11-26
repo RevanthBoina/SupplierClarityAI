@@ -9,7 +9,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   selector: 'wb-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'wb-beam' },
-  template: `<a class="btn" [class.btn--light]="variant() === 'light'" [class.btn--outline]="variant() === 'outline'" [class.btn--yellow]="variant() === 'yellow'" [class.btn--outline-light]="variant() === 'outline-light'" [attr.href]="href()"><ng-content /></a>`,
+  template: `<a class="btn" [class.btn--light]="variant() === 'light'" [class.btn--outline]="variant() === 'outline'" [class.btn--yellow]="variant() === 'yellow'" [class.btn--outline-light]="variant() === 'outline-light'" [attr.href]="href()" [attr.download]="download()"><ng-content /></a>`,
   styles: `
     :host { display: inline-flex; border-radius: var(--wb-radius-pill); }
     /* Keep the outline beam (drawn on the host) moving with the button's hover lift */
@@ -17,7 +17,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
     :host(:hover)::after { transform: translateY(-2px); }
     :host(:active)::after { transform: translateY(1px); }
     :host([variant='outline-light']) { --wb-beam-tail: #fff; --wb-beam-core: #fff; }
-    :host([variant='light']), :host([variant='outline']) { --wb-beam-tail: var(--wb-blue); --wb-beam-core: #a9c0ff; }
+    :host([variant='light']), :host([variant='outline']) { --wb-beam-tail: var(--wb-blue); --wb-beam-core: #a9dfe4; }
     .btn {
       display: inline-flex;
       align-items: center;
@@ -45,13 +45,13 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
       transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .btn:hover::before { transform: translateX(120%); }
-    .btn:hover { background: var(--wb-blue-deep); box-shadow: 0 8px 22px rgba(44, 88, 241, 0.32); transform: translateY(-2px); }
+    .btn:hover { background: var(--wb-blue-deep); box-shadow: 0 8px 22px rgba(14, 154, 165, 0.32); transform: translateY(-2px); }
     .btn:active { transform: translateY(1px); }
     .btn--light { background: var(--wb-white); color: var(--wb-blue); border-color: var(--wb-white); }
     .btn--light:hover { background: var(--wb-blue-tint); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); }
     /* outline: white fill, blue text and blue border */
     .btn--outline { background: var(--wb-white); color: var(--wb-blue); border-color: var(--wb-blue); }
-    .btn--outline:hover { background: var(--wb-blue-tint); box-shadow: 0 6px 18px rgba(44, 88, 241, 0.12); }
+    .btn--outline:hover { background: var(--wb-blue-tint); box-shadow: 0 6px 18px rgba(14, 154, 165, 0.12); }
     /* For blue panels: yellow fill with dark text, and a white outline */
     .btn--yellow { background: var(--wb-yellow); color: #1e1e1e; border-color: var(--wb-yellow); }
     .btn--yellow:hover { background: #ffc23d; box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18); }
@@ -62,4 +62,5 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 export class ButtonComponent {
   readonly href = input<string>('#');
   readonly variant = input<'primary' | 'light' | 'outline' | 'yellow' | 'outline-light'>('primary');
+  readonly download = input<string | null>(null);
 }

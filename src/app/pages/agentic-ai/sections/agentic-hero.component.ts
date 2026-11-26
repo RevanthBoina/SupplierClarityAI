@@ -89,7 +89,7 @@ import { HeroContent } from '../../../content/content-types';
       white-space: nowrap;
     }
     .chip::before { content: ''; flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--wb-blue); }
-    .chip--yellow::before { background: #ffd04a; }
+    .chip--yellow::before { background: #ffc45c; }
     .chip--top-right { left: 56%; top: 1.8%; }
     .chip--mid-right { left: 68.3%; top: 40.7%; }
     .chip--bottom-left { left: -25.7%; top: 95%; }

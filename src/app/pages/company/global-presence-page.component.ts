@@ -58,12 +58,12 @@ import { GLOBAL, PURPOSE } from '../../content/about-content';
       </section>
 
       <!-- UAE intro -->
-      <section class="rsec rsec--tint" id="uae" wbSectionTheme="#f4f7ff" aria-labelledby="uae-title">
+      <section class="rsec rsec--tint" id="singapore" wbSectionTheme="#eef8f9" aria-labelledby="singapore-title">
         <div class="wb-container rsec__split rsec__split--flip">
           <div>
             <p class="rsec__kicker"><span aria-hidden="true">{{ c.regions[1].flag }}</span> {{ c.regions[1].name }} · {{ c.regions[1].cities }}</p>
-            <h2 class="wb-h2 rsec__title" id="uae-title">{{ c.uae.titleLead }}<br /><span class="wb-accent">{{ c.uae.titleAccent }}</span></h2>
-            @for (p of c.uae.intro; track $index) { <p class="rsec__text">{{ p }}</p> }
+            <h2 class="wb-h2 rsec__title" id="singapore-title">{{ c.singapore.titleLead }}<br /><span class="wb-accent">{{ c.singapore.titleAccent }}</span></h2>
+            @for (p of c.singapore.intro; track $index) { <p class="rsec__text">{{ p }}</p> }
           </div>
           <figure class="rsec__art" wbReveal="right"><img [src]="c.regions[1].image" width="612" height="408" [alt]="c.regions[1].imageAlt" loading="lazy" /></figure>
         </div>
@@ -72,9 +72,9 @@ import { GLOBAL, PURPOSE } from '../../content/about-content';
       <!-- UAE footprint + solutions -->
       <section class="foot" wbSectionTheme="#ffffff" aria-labelledby="foot-title">
         <div class="wb-container">
-          <h2 class="foot__title" id="foot-title">{{ c.uae.footprintTitle }}</h2>
+          <h2 class="foot__title" id="foot-title">{{ c.singapore.footprintTitle }}</h2>
           <ol class="foot__cards">
-            @for (f of c.uae.footprint; track f.title; let i = $index) {
+            @for (f of c.singapore.footprint; track f.title; let i = $index) {
               <li class="fcard" wbReveal="up" [wbRevealDelay]="i * 80">
                 <span class="fcard__n">0{{ i + 1 }}</span>
                 <h3 class="fcard__title">{{ f.title }}</h3>
@@ -84,11 +84,11 @@ import { GLOBAL, PURPOSE } from '../../content/about-content';
           </ol>
           <div class="sol">
             <div>
-              <h3 class="sol__title">{{ c.uae.solutionsTitle }}</h3>
-              <ul class="ticks">@for (s of c.uae.solutions; track s) { <li>{{ s }}</li> }</ul>
+              <h3 class="sol__title">{{ c.singapore.solutionsTitle }}</h3>
+              <ul class="ticks">@for (s of c.singapore.solutions; track s) { <li>{{ s }}</li> }</ul>
             </div>
             <div class="gallery">
-              @for (g of c.uae.gallery; track g.image; let i = $index) {
+              @for (g of c.singapore.gallery; track g.image; let i = $index) {
                 <img class="gallery__img" [src]="g.image" width="600" height="900" [alt]="g.alt" loading="lazy" [style.--i]="i" />
               }
             </div>
@@ -97,9 +97,9 @@ import { GLOBAL, PURPOSE } from '../../content/about-content';
       </section>
 
       <!-- UAE advisors -->
-      <section class="advs" wbSectionTheme="#f4f7ff" aria-labelledby="advs-title">
+      <section class="advs" wbSectionTheme="#eef8f9" aria-labelledby="advs-title">
         <div class="wb-container">
-          <h2 class="foot__title" id="advs-title">{{ c.uae.advisorsTitle }}</h2>
+          <h2 class="foot__title" id="advs-title">{{ c.singapore.advisorsTitle }}</h2>
           <ul class="advs__list">
             @for (a of advisors; track a.name) {
               <li class="adv" wbReveal="up">
@@ -108,26 +108,26 @@ import { GLOBAL, PURPOSE } from '../../content/about-content';
               </li>
             }
           </ul>
-          <p class="advs__closing">{{ c.uae.closing }}</p>
+          <p class="advs__closing">{{ c.singapore.closing }}</p>
         </div>
       </section>
 
       <!-- USA -->
-      <section class="usa" id="usa" wbSectionTheme="#ffffff" aria-labelledby="usa-title">
+      <section class="usa" id="netherlands" wbSectionTheme="#ffffff" aria-labelledby="netherlands-title">
         <div class="usa__banner" [style.background-image]="'url(' + c.regions[2].image + ')'">
           <div class="wb-container usa__banner-inner">
             <p class="rsec__kicker rsec__kicker--light"><span aria-hidden="true">{{ c.regions[2].flag }}</span> {{ c.regions[2].name }} · {{ c.regions[2].cities }}</p>
-            <h2 class="wb-h2 usa__title" id="usa-title">{{ c.usa.titleLead }}<br /><span>{{ c.usa.titleAccent }}</span></h2>
+            <h2 class="wb-h2 usa__title" id="netherlands-title">{{ c.netherlands.titleLead }}<br /><span>{{ c.netherlands.titleAccent }}</span></h2>
           </div>
         </div>
         <div class="wb-container">
-          <p class="usa__intro">{{ c.usa.intro }}</p>
+          <p class="usa__intro">{{ c.netherlands.intro }}</p>
         </div>
       </section>
-      <section class="usa-p" wbSectionTheme="#ffffff" aria-label="What we bring to the USA">
+      <section class="usa-p" wbSectionTheme="#ffffff" aria-label="What we bring to Europe">
         <div class="wb-container">
           <ul class="pillars">
-            @for (p of c.usa.pillars; track p.title; let i = $index) {
+            @for (p of c.netherlands.pillars; track p.title; let i = $index) {
               <li class="pillar" tabindex="0" wbReveal="up" [wbRevealDelay]="i * 90">
                 <img class="pillar__img" [src]="p.image" width="520" height="740" alt="" loading="lazy" />
                 <div class="pillar__body">
@@ -165,7 +165,7 @@ import { GLOBAL, PURPOSE } from '../../content/about-content';
       transition: transform 0.35s var(--wb-ease-out), box-shadow 0.35s var(--wb-ease-out);
     }
     @keyframes region-in { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
-    .region:hover, .region:focus-visible { transform: translateX(-6px); box-shadow: 0 18px 44px rgba(44, 88, 241, 0.18); }
+    .region:hover, .region:focus-visible { transform: translateX(-6px); box-shadow: 0 18px 44px rgba(14, 154, 165, 0.18); }
     .region__img { width: 100%; height: clamp(72px, 13svh, 120px); object-fit: cover; border-radius: 14px; }
     .region__body { display: flex; flex-direction: column; gap: 2px; }
     .region__flag { font-size: 1.25rem; }
@@ -175,22 +175,22 @@ import { GLOBAL, PURPOSE } from '../../content/about-content';
     .region:hover .region__go { background: var(--wb-blue); color: #fff; }
 
     .rsec { padding: var(--wb-section-y) 0; background: #fff; scroll-margin-top: 70px; }
-    .rsec--tint { background: #f4f7ff; }
+    .rsec--tint { background: #f0f9fa; }
     .rsec__split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 96px); align-items: center; }
     .rsec__art { margin: 0; }
-    .rsec__art img { display: block; width: 100%; height: min(540px, calc(100svh - 2 * var(--wb-section-y))); object-fit: cover; border-radius: 28px; box-shadow: 0 24px 60px rgba(44, 88, 241, 0.14); }
+    .rsec__art img { display: block; width: 100%; height: min(540px, calc(100svh - 2 * var(--wb-section-y))); object-fit: cover; border-radius: 28px; box-shadow: 0 24px 60px rgba(14, 154, 165, 0.14); }
     .rsec__kicker { font-weight: 700; font-size: 0.875rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--wb-blue); }
     .rsec__kicker--light { color: #ffd84d; }
     .rsec__title { margin: var(--wb-space-xs) 0 var(--wb-space-sm); font-size: min(var(--wb-fs-h2), 6.4svh); }
     .rsec__text { margin-top: 12px; max-width: 620px; font-size: var(--wb-fs-body); line-height: 1.65; color: var(--wb-ink-600); }
     .ticks { margin-top: var(--wb-space-sm); display: flex; flex-direction: column; gap: 10px; }
     .ticks li { position: relative; padding-left: 30px; font-size: var(--wb-fs-body); line-height: 1.5; color: #2a2a2a; }
-    .ticks li::before { content: ''; position: absolute; left: 0; top: 0.15em; width: 20px; height: 20px; border-radius: 50%; background: var(--wb-blue-tint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='m6 10 3 3 5-6' fill='none' stroke='%232c58f1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% no-repeat; }
+    .ticks li::before { content: ''; position: absolute; left: 0; top: 0.15em; width: 20px; height: 20px; border-radius: 50%; background: var(--wb-blue-tint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='m6 10 3 3 5-6' fill='none' stroke='%230e9aa5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% no-repeat; }
 
     .foot { padding: var(--wb-section-y) 0; background: #fff; }
     .foot__title { font-weight: 700; font-size: var(--wb-fs-h3); color: #0f0e09; text-align: center; }
     .foot__cards { margin-top: var(--wb-space-md); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--wb-gap-cards); }
-    .fcard { padding: clamp(20px, 2vw, 32px); border-radius: 20px; background: linear-gradient(160deg, #2c58f1, #4a74f6); color: #fff; transition: transform 0.4s var(--wb-ease-out); }
+    .fcard { padding: clamp(20px, 2vw, 32px); border-radius: 20px; background: linear-gradient(160deg, #0e9aa5, #2fb3bd); color: #fff; transition: transform 0.4s var(--wb-ease-out); }
     .fcard:hover { transform: translateY(-6px); }
     .fcard__n { font-weight: 700; font-size: var(--wb-fs-h3); line-height: 1; color: #ffd84d; }
     .fcard__title { margin-top: 12px; font-weight: 700; font-size: var(--wb-fs-card-title); }
@@ -201,7 +201,7 @@ import { GLOBAL, PURPOSE } from '../../content/about-content';
     .gallery__img { width: 100%; height: clamp(220px, 34svh, 360px); object-fit: cover; border-radius: 18px; transform: translateY(calc((var(--i) - 1) * -18px)); transition: transform 0.5s var(--wb-ease-out); }
     .gallery:hover .gallery__img { transform: none; }
 
-    .advs { padding: var(--wb-section-y) 0; background: #f4f7ff; }
+    .advs { padding: var(--wb-section-y) 0; background: #f0f9fa; }
     .advs__list { margin-top: var(--wb-space-md); display: grid; grid-template-columns: 1fr 1fr; gap: var(--wb-gap-cards); }
     .adv { display: grid; grid-template-columns: 110px 1fr; gap: 22px; align-items: start; padding: clamp(20px, 2vw, 30px); border-radius: 22px; background: #fff; box-shadow: 0 10px 30px rgba(28, 44, 110, 0.06); }
     .adv__photo { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; }
@@ -219,7 +219,7 @@ import { GLOBAL, PURPOSE } from '../../content/about-content';
     .usa__title span { color: #ffd84d; }
     .usa__intro { margin: var(--wb-space-lg) auto 0; max-width: 980px; text-align: center; font-size: var(--wb-fs-lead); line-height: 1.6; color: var(--wb-ink-600); }
     .pillars { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--wb-gap-cards); }
-    .pillar { position: relative; overflow: hidden; height: clamp(300px, calc(100svh - 2 * var(--wb-section-y)), 620px); border-radius: 24px; background: #2c58f1; outline: none; }
+    .pillar { position: relative; overflow: hidden; height: clamp(300px, calc(100svh - 2 * var(--wb-section-y)), 620px); border-radius: 24px; background: #0e9aa5; outline: none; }
     .pillar__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--wb-ease-out), opacity 0.45s ease; }
     .pillar__body { position: absolute; left: 0; right: 0; bottom: 0; padding: clamp(18px, 2vw, 28px); background: linear-gradient(180deg, rgba(20, 40, 120, 0) 0%, rgba(20, 40, 120, 0.92) 40%); color: #fff; }
     .pillar__title { font-weight: 700; font-size: var(--wb-fs-card-title); }

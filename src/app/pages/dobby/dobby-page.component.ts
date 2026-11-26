@@ -23,7 +23,7 @@ import { DOBBY_CTA, DOBBY_CAPABILITIES, DOBBY_HERO, DOBBY_IMPACT, DOBBY_VIDEO, D
     <main>
       <wb-product-video wbSectionTheme="#ffffff" [content]="video" />
       <wb-infra-capabilities wbSectionTheme="#ffffff" [content]="caps" />
-      <wb-agentic-help wbSectionTheme="#f4f7ff" [content]="industries" layout="centered" />
+      <wb-agentic-help wbSectionTheme="#f0f9fa" [content]="industries" layout="centered" />
       <wb-impact-rows wbSectionTheme="#f7f8ff" [content]="impact" />
       <wb-cta-band wbSectionTheme="#ffffff" [content]="cta" />
     </main>

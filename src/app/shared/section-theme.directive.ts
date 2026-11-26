@@ -2,7 +2,7 @@ import { Directive, ElementRef, OnDestroy, afterNextRender, inject, input } from
 import { PageThemeService } from './page-theme.service';
 
 /**
- * Gives a section a page colour: <wb-services wbSectionTheme="#ffd06a" />.
+ * Gives a section a page colour: <wb-services wbSectionTheme="#ffc45c" />.
  * While the section is in the middle of the screen, the whole page fades to that colour.
  */
 @Directive({ selector: '[wbSectionTheme]' })

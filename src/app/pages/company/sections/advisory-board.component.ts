@@ -41,7 +41,7 @@ import { PURPOSE } from '../../../content/about-content';
   </section>
   `,
   styles: `
-    .adv { padding: calc(var(--wb-section-y) * 0.85) 0; background: #f4f7ff; }
+    .adv { padding: calc(var(--wb-section-y) * 0.85) 0; background: #f0f9fa; }
     .tabs { width: fit-content; margin: min(var(--wb-space-md), 3svh) auto 0; display: flex; gap: 6px; padding: 5px; border: 1px solid #e1e7f5; border-radius: 999px; background: #fff; }
     .tabs__tab { padding: 10px 26px; border-radius: 999px; font-size: var(--wb-fs-body); color: #2a2a2a; transition: background-color 0.3s ease, color 0.3s ease; }
     .tabs__tab--on { background: var(--wb-blue); color: #fff; font-weight: 600; }

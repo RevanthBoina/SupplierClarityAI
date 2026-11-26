@@ -111,7 +111,7 @@ import { PillLabelComponent } from '../../../shared/pill-label.component';
     }
     .pill::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--wb-blue); }
     .pill:nth-child(2)::before { background: #7e5ebf; }
-    .pill:nth-child(3)::before { background: #ffd04a; }
+    .pill:nth-child(3)::before { background: #ffc45c; }
     .detail__link { color: var(--wb-blue); text-decoration: underline; text-underline-offset: 3px; }
     .caps--no-head .caps__body { margin-top: 0; }
     /* The photo deck is the same size in every section of this kind (service and product pages): one screen
@@ -145,7 +145,7 @@ import { PillLabelComponent } from '../../../shared/pill-label.component';
       height: 12px;
       margin-top: -6px;
       border-radius: 50%;
-      background: #ffd04a;
+      background: #ffc45c;
       transform: scale(0);
       transition: transform 0.35s var(--wb-ease-spring);
     }

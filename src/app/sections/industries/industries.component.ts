@@ -109,9 +109,9 @@ import { INDUSTRIES } from '../../content/site-content';
     .bento__card:hover .bento__inner::before { transform: scale(1.08); }
     .bento__card { transition: transform 0.45s var(--wb-ease-out); }
     .bento__card:hover { transform: translateY(-6px); }
-    .bento__card:hover .bento__inner { box-shadow: 0 16px 36px rgba(44, 88, 241, 0.14); }
+    .bento__card:hover .bento__inner { box-shadow: 0 16px 36px rgba(14, 154, 165, 0.14); }
     .bento__number { transition: color 0.35s ease; }
-    .bento__card:hover .bento__number { color: rgba(44, 88, 241, 0.12); }
+    .bento__card:hover .bento__number { color: rgba(14, 154, 165, 0.12); }
     .bento__link span[aria-hidden] { display: inline-block; transition: transform 0.3s var(--wb-ease-out); }
     .bento__card:hover .bento__link span[aria-hidden] { transform: translateX(6px); }
 

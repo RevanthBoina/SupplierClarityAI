@@ -3,18 +3,18 @@
    The design is drawn at 1920px; type scales down with clamp() below that.
    ============================================================ */
 :root {
-  /* Colour */
-  --wb-blue: #2c58f1;
-  --wb-blue-deep: #1b3fb5;
-  --wb-blue-button: #1b4fe6;
-  --wb-blue-tint: #ebf0ff;
-  --wb-blue-soft: #cadaf9;
-  --wb-blue-chip: #ebf3ff;
-  --wb-blue-icon: #cadfff;
-  --wb-blue-border: #c6d2f8;
-  --wb-amber: #ffaf00;
-  --wb-yellow: #ffd06a;
-  --wb-yellow-soft: #f4e19a;
+  /* Colour — SupplierClarity AI: clarity teal on deep sea, warm amber accent */
+  --wb-blue: #0e9aa5;
+  --wb-blue-deep: #0a626b;
+  --wb-blue-button: #0c7e88;
+  --wb-blue-tint: #e7f5f6;
+  --wb-blue-soft: #bee4e8;
+  --wb-blue-chip: #edf8f9;
+  --wb-blue-icon: #c9ecef;
+  --wb-blue-border: #b5dfe4;
+  --wb-amber: #f5a623;
+  --wb-yellow: #ffc45c;
+  --wb-yellow-soft: #f4dda0;
   --wb-red: #d7263d;
   --wb-ink: #000;
   --wb-ink-900: #1e1e1e;
@@ -22,13 +22,13 @@
   --wb-ink-700: #232323;
   --wb-ink-600: #4a4a4a;
   --wb-ink-muted: #6b7290;
-  --wb-ink-navy: #2b3a67;
-  --wb-ink-label: #0b1533;
-  --wb-surface: #f8f9fb;
-  --wb-surface-blue: #eaf2fe;
-  --wb-surface-sky: #f0f6ff;
+  --wb-ink-navy: #10383d;
+  --wb-ink-label: #06282c;
+  --wb-surface: #f7fafa;
+  --wb-surface-blue: #e7f4f5;
+  --wb-surface-sky: #f0fafb;
   --wb-white: #fff;
-  --wb-line: #e3e7ef;
+  --wb-line: #e1ebea;
 
   /* Typography */
   --wb-font-display: 'Satoshi', 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
