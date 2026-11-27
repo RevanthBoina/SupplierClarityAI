@@ -1,24 +1,15 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 /**
- * Clarity pill button (Figma component "primary-btn", 544:40283).
- * primary: teal fill with amber hairline. light: white fill, teal text.
- *
- * Renders an <a> when `href` is supplied (every marketing CTA navigates) and a
- * real <button type="button"> when it is not, so in-page actions such as
- * "Enhance image" never hijack the URL with href="#".
+ * WhiteBlue pill button (Figma component "primary-btn", 544:40283).
+ * primary: blue fill with amber hairline. light: white fill, blue text.
+ * Renders an <a> because every CTA in the design navigates.
  */
 @Component({
   selector: 'wb-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'wb-beam' },
-  template: `
-    @if (href()) {
-      <a class="btn" [class.btn--light]="variant() === 'light'" [class.btn--outline]="variant() === 'outline'" [class.btn--yellow]="variant() === 'yellow'" [class.btn--outline-light]="variant() === 'outline-light'" [attr.href]="href()" [attr.download]="download()" [attr.aria-disabled]="disabled() || null"><ng-content /></a>
-    } @else {
-      <button class="btn" type="button" [class.btn--light]="variant() === 'light'" [class.btn--outline]="variant() === 'outline'" [class.btn--yellow]="variant() === 'yellow'" [class.btn--outline-light]="variant() === 'outline-light'" [disabled]="disabled()"><ng-content /></button>
-    }
-  `,
+  template: `<a class="btn" [class.btn--light]="variant() === 'light'" [class.btn--outline]="variant() === 'outline'" [class.btn--yellow]="variant() === 'yellow'" [class.btn--outline-light]="variant() === 'outline-light'" [attr.href]="href()" [attr.download]="download()"><ng-content /></a>`,
   styles: `
     :host { display: inline-flex; border-radius: var(--wb-radius-pill); }
     /* Keep the outline beam (drawn on the host) moving with the button's hover lift */
@@ -28,9 +19,6 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
     :host([variant='outline-light']) { --wb-beam-tail: #fff; --wb-beam-core: #fff; }
     :host([variant='light']), :host([variant='outline']) { --wb-beam-tail: var(--wb-blue); --wb-beam-core: #a9dfe4; }
     .btn {
-      appearance: none;
-      cursor: pointer;
-      font: inherit;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -59,8 +47,6 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
     .btn:hover::before { transform: translateX(120%); }
     .btn:hover { background: var(--wb-blue-deep); box-shadow: 0 8px 22px rgba(14, 154, 165, 0.32); transform: translateY(-2px); }
     .btn:active { transform: translateY(1px); }
-    .btn:focus-visible { outline: 3px solid var(--wb-yellow); outline-offset: 3px; }
-    .btn[disabled], .btn[aria-disabled='true'] { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; pointer-events: none; }
     .btn--light { background: var(--wb-white); color: var(--wb-blue); border-color: var(--wb-white); }
     .btn--light:hover { background: var(--wb-blue-tint); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); }
     /* outline: white fill, blue text and blue border */
@@ -74,8 +60,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   `,
 })
 export class ButtonComponent {
-  readonly href = input<string | null>(null);
-  readonly disabled = input(false);
+  readonly href = input<string>('#');
   readonly variant = input<'primary' | 'light' | 'outline' | 'yellow' | 'outline-light'>('primary');
   readonly download = input<string | null>(null);
 }

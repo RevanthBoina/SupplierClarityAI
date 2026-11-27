@@ -29,10 +29,10 @@ interface Intent {
 }
 
 const UPSCALER =
-  'The **Clarity Upscaler** is the live tool on this site. Open [Try the upscaler](/enhance), drop in a supplier photo, pick an engine, a scale (2x, 3x or 4x) and a format (PNG or JPG), then compare the result in the before and after slider and download the catalog-ready file. The demo runs neural enhancement on CPU, so jobs queue one at a time and results are kept for two hours.';
+  'The **Clarity Upscaler** is the live tool on this site. Open [Try the upscaler](/enhance), drop in a supplier photo, pick an engine, a scale (2x, 3x or 4x) and a format (PNG or JPG), then compare the result in the before and after slider and download the catalog-ready file. The demo runs Real-ESRGAN on CPU, so jobs queue one at a time and results are kept for two hours.';
 
 const MODELS =
-  'There are three engines in the tool:\n- **Catalog Balanced** is the everyday workhorse, about 7 seconds per 800x600 image.\n- **Fast Sketch** is the smallest and fastest, great for flat art and sketches.\n- **Photo Max Detail** restores the deepest detail, about 2 minutes per 800x600 image.\nFor most catalog photos, start with Catalog Balanced. Open [Try the upscaler](/enhance) to compare them on your own image.';
+  'There are three engines in the tool:\n- **Catalog Balanced** (realesrgan-x4fast) is the everyday workhorse, about 7 seconds per 800x600 image.\n- **Fast Sketch** (animevideov3) is the smallest and fastest, great for flat art and sketches.\n- **Photo Max Detail** (realesrgan-x4plus) restores the deepest detail, about 2 minutes per 800x600 image.\nFor most catalog photos, start with Catalog Balanced. Open [Try the upscaler](/enhance) to compare them on your own image.';
 
 const INTENTS: Intent[] = [
   {
