@@ -106,7 +106,7 @@ export const API_SERVICES_RING: DeliveryContent = {
       label: 'Enhancement engines', title: 'Enhancement engines', tone: 'green', icon: 'orbit',
       intro: 'Turn any supplier upload into catalog-ready imagery, on demand.',
       points: [
-        { text: 'Real-ESRGAN-class super-resolution per category.' },
+        { text: 'Neural super-resolution per category.' },
         { text: 'Background, crop and file-weight normalisation.' },
         { text: 'Webhooks that fire the moment a job finishes.' },
         { text: 'REST endpoints with predictable, versioned output.' },

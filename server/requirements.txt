@@ -1,0 +1,7 @@
+# SupplierClarity AI — enhancement worker (CPU inference, no GPU needed).
+# Install into a local virtualenv (npm run setup:engine does this for you):
+#   python3 -m venv .venv
+#   .venv/bin/pip install -r server/requirements.txt
+ncnn>=1.0.20240410
+numpy>=1.24,<3
+pillow>=10.0
