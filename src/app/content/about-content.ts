@@ -263,7 +263,7 @@ export const FRAMEWORK = {
       { label: 'Enhancement pipeline delivery', title: 'Enhancement pipeline delivery', tone: 'green', icon: 'chip',
         intro: 'Catalog value delivered every 90 days.',
         points: [
-          { text: 'Neural super-resolution tuned per category.' },
+          { text: 'Real-ESRGAN-class super-resolution tuned per category.' },
           { text: 'Compliance checks that prevent bad listings.' },
           { text: 'Deployed into the PIM and marketplaces you already use.' },
         ] },
@@ -325,7 +325,7 @@ export const FRAMEWORK = {
     titleAccent: 'drive results.',
     lead: 'The building blocks we combine in every 90-day cycle.',
     items: [
-      { title: 'Super-resolution enhancement', points: ['Neural super-resolution models tuned per category.', 'Detail reconstruction for text, labels and fabric.', 'Up to 4× output with quality scoring.'] },
+      { title: 'Super-resolution enhancement', points: ['Real-ESRGAN-class models tuned per category.', 'Detail reconstruction for text, labels and fabric.', 'Up to 4× output with quality scoring.'] },
       { title: 'Catalog quality analytics', points: ['Automated benchmarks against marketplace rules.', 'Rejection-driver analysis per supplier and category.', 'Predictive QA before images go live.'] },
       { title: 'Compliance automation', points: ['Real-time checks for resolution, background and crop.', 'Automated compliance monitoring and reporting.', 'Channel-specific rule packs.'] },
       { title: 'Supplier experience automation', points: ['Self-service upload portals for vendors.', 'Automated feedback with fix instructions.', 'Predictive intake quality scoring.'] },

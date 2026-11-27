@@ -49,7 +49,7 @@ export const INFRA_CAPABILITIES: CapabilitiesContent = {
     },
     {
       name: 'Hands-free enhancement',
-      text: 'Self-tuning pipelines pick the right enhancement model and rules per category, monitor trends and optimize output, all while ensuring channel compliance.',
+      text: 'Self-tuning pipelines pick the right Real-ESRGAN model and rules per category, monitor trends and optimize output, all while ensuring channel compliance.',
       image: IMG + 'cap-2.webp',
     },
     {

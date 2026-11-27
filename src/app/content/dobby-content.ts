@@ -53,7 +53,7 @@ export const DOBBY_CAPABILITIES: CapabilitiesContent = {
     { name: 'Bulk ingest', title: 'Drop a folder. Get a finished batch.', image: IMG + 'cap-1.webp',
       text: 'BatchForge watches SFTP drops, cloud folders and PIM exports, and queues every new supplier image automatically, so no catalog ever waits in an inbox.' },
     { name: 'Category-aware models', title: 'The right engine for every category.', image: IMG + 'cap-2.webp',
-      text: 'Pack shots, apparel, electronics and sketch-style art each get the enhancement model tuned for them, with per-category rules for scale, background and crop.' },
+      text: 'Pack shots, apparel, electronics and sketch-style art each get the Real-ESRGAN model tuned for them, with per-category rules for scale, background and crop.' },
     { name: 'Rules engine', title: 'Shaped around your acceptance rules.', image: IMG + 'cap-3.webp',
       text: 'Each batch applies the resolution, background and file-weight rules your channels enforce, so images come out compliant the first time. Reviewed by ComplyCheck before publish.',
       link: { label: 'ComplyCheck', href: QA_HREF } },
@@ -117,7 +117,7 @@ export const DOBBY_IMPACT: ImpactContent = {
   ],
   action: {
     kicker: 'The technology behind BatchForge',
-    title: 'Built on the Clarity enhancement pipeline',
+    title: 'Built on the Real-ESRGAN pipeline',
     text: 'BatchForge runs the same enhancement engine as our public upscaler, tuned per category and wrapped in quality gates your team defines.',
     cta: 'Try the upscaler',
     href: '/enhance',
